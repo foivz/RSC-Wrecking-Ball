@@ -1,4 +1,4 @@
-package rsc.foi.hr.lifeline;
+package hr.foi.rsc.lifeline;
 
 import android.app.Application;
 
@@ -17,6 +17,8 @@ public class LifeLineApplication extends Application {
 
         Parse.initialize(this, "Qz1N1B4aBwzmiszChrGKU37QalVXzZ8iew6hV2oH",
             "kWAfX9HmPe1HRXojqj8kuPEufx0r9yXFcoCzVdAq");
+
+        Parse.setLogLevel(Parse.LOG_LEVEL_VERBOSE);
     }
 
     public LifeLineApplication getInstance() {

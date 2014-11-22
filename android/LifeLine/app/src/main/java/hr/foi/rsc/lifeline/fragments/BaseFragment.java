@@ -1,10 +1,11 @@
-package rsc.foi.hr.lifeline.fragments;
+package hr.foi.rsc.lifeline.fragments;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 
-import rsc.foi.hr.lifeline.R;
+import butterknife.ButterKnife;
+import hr.foi.rsc.lifeline.R;
 
 /**
  * Created by dino on 22/11/14.
@@ -16,6 +17,7 @@ public class BaseFragment extends Fragment {
     public void showProgressBar() {
         if (progressDialog == null || !progressDialog.isShowing() && !getActivity().isFinishing()) {
             progressDialog = new ProgressDialog(getActivity());
+            progressDialog.setMessage(getString(R.string.loading_message));
             progressDialog.show();
         }
     }
@@ -35,4 +37,9 @@ public class BaseFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.reset(this);
+    }
 }

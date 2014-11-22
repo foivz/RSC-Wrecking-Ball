@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.0"
 
     defaultConfig {
-        applicationId "rsc.foi.hr.lifeline"
+        applicationId "hr.foi.rsc.lifeline"
         minSdkVersion 16
         targetSdkVersion 21
         versionCode 1
@@ -26,8 +26,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile fileTree(dir: 'libs', include: 'Parse-*.jar')
     compile 'com.android.support:appcompat-v7:21.0.2'
     compile 'com.jakewharton:butterknife:6.0.0'
-    compile 'com.parse.bolts:bolts-android:1.1.3'
 }

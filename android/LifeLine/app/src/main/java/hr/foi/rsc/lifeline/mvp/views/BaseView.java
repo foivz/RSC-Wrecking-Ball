@@ -1,4 +1,4 @@
-package rsc.foi.hr.lifeline.mvp.views;
+package hr.foi.rsc.lifeline.mvp.views;
 
 /**
  * Created by dino on 22/11/14.

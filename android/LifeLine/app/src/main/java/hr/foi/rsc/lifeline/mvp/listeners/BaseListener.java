@@ -1,4 +1,4 @@
-package rsc.foi.hr.lifeline.mvp.listeners;
+package hr.foi.rsc.lifeline.mvp.listeners;
 
 /**
  * Created by dino on 22/11/14.

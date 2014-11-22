@@ -1,4 +1,4 @@
-package rsc.foi.hr.lifeline;
+package hr.foir.rsc.lifeline;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
