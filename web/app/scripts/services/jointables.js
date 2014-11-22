@@ -13,7 +13,7 @@ angular.module('rscwbApp')
 
       var fullInstitution = {};
 
-      var returnResult = $q.defer();+
+      var returnResult = $q.defer();
 
       queryUser.get(objectId, {
         success: function(user) {
