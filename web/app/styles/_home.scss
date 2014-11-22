@@ -1,0 +1,29 @@
+.super {
+  vertical-align: super;
+}
+
+.blood-levels-container {
+  .blood-levels-type {
+
+  }
+  .blood-level {
+    position: relative;
+    .frg {
+      position: relative;
+      width: 80px;
+      height: 120px;
+      background: #222;
+      margin: 0 auto;
+    }
+    .bck {
+      position: absolute;
+      bottom: 0;
+      height: 30px;
+      width: 80px;
+      background: red;
+    }
+    .type {
+      text-align: center;
+    }
+  }
+}
