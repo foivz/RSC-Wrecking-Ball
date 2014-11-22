@@ -21,7 +21,7 @@ public class LifeLineApplication extends Application {
             "kWAfX9HmPe1HRXojqj8kuPEufx0r9yXFcoCzVdAq");
         ParseTwitterUtils.initialize("GtQtnF894a6USOPRIVZx2HWfv",
             "yiG7Sn6ZTlVQbKSCtylH9LRmNCGA4Ir6jdNyKXdQMSGu9oQmwx");
-        ParseFacebookUtils.initialize("830063417017234");
+        ParseFacebookUtils.initialize("830133423676900");
 
         Parse.setLogLevel(Parse.LOG_LEVEL_VERBOSE);
     }
