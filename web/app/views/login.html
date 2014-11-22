@@ -1,47 +1,31 @@
 <div class="login">
-  <div class="bck-color red"></div>
+  <div class="bck-color red">
+    <div class="break"></div>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="ll-logo">
-          <img src="http://placehold.it/150x150">
-        </div>
-      </div>
-      <div class="col-xs-12">
-        <div class="navbar">
-          <ul class="list-unstyled">
-            <li>
-              <a class="btn btn-dark-red">Button 1</a>
-            </li>
-            <li>
-              <a class="btn btn-dark-red">Button 2</a>
-            </li>
-            <li>
-              <a class="btn btn-dark-red">Button 3</a>
-            </li>
-          </ul>
-        </div>
+        <div class="ll-logo"></div>
       </div>
       <div class="col-xs-12">
         <div class="login-container">
-          <div ng-hide="loginClicked" class="login-button">
-            <a ng-click="loginClicked=true" class="btn btn-dark-red btn-login">{{lang.login}}</a>
-          </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-              <div ng-show="loginClicked" class="login-form">
-                <form accept-charset="utf-8">
-                  <span ng-show="error.hasError" class="error">{{error.msg}}</span>
+          <div class="login-form">
+            <span ng-show="error.hasError" class="error">{{error.msg}}</span>
+            <div class="row">
+              <form>
+                <div class="col-sm-4 col-sm-offset-2">
                   <input class="form-control input-clear" type="text" ng-model="loginUser.username" placeholder="{{lang.username}}">
+                </div>
+                <div class="col-sm-4">
                   <input class="form-control input-clear" type="password" ng-model="loginUser.password" placeholder="{{lang.password}}">
-                  <div class="login-submit">
-                    <input class="btn btn-submit" type="submit" ng-click="onLoginClick()" value="{{lang.submit}}">
-                    <input class="btn btn-submit" type="button" ng-click="onRegisterClick()" value="Register">
-                  </div>
-                </form>
-              </div>
+                </div>
+                <div class="col-sm-2">
+                  <input class="btn btn-submit login-submit" type="submit" ng-click="onLoginClick()" value="{{lang.submit}}">
+                </div>
+              </form>
             </div>
           </div>
+          <a ng-click="onForgotPassword()" class="link red">{{lang.forgotPassword}}</a>
         </div>
       </div>
     </div>

@@ -38,6 +38,7 @@ angular.module('rscwbApp')
       });
 
       $scope.updateBloodValues = function() {
+        //joinTables.join($scope.currentUser.id).then(function(instititution) {
         joinTables.join("4AiydVM8JP").then(function(institution) {
           for(var i = 0; i < institution.blood.length; i++) {
             instititution.blood[i].save({

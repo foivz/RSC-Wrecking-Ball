@@ -40,6 +40,10 @@ a {
   cursor: pointer;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .btn {
   &.btn-submit {
     background-color: $blood-red;
@@ -81,23 +85,38 @@ span {
   &.red {
     background-color: $blood-red;
   }
+  .break {
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    bottom: -20px;
+    left: 0;
+    background: image-url('/images/break.png') center center;
+  }
 }
 
 //HEADER
 
 .header {
-  height: 70px;
-  padding: 20px;
-  line-height: 24px;
+  height: 80px;
+  //padding: 20px;
+  //line-height: 24px;
   background-color: $blood-red;
   color: #fff;
 
   .app-name {
     //line-height: 70px;
-    font-size: 24px;
-    padding: 0 10px;
+    height: 80px;
+    width: 84px;
     margin: 0;
-    display: inline;
+    display: inline-block;
+    float: left;
+    background: $blood-dark-red image-url('/images/logo.png') no-repeat center center;
+
+    &:hover {
+      background-color: $blood-light-red;
+    }
+    transition: all 0.2s;
   }
 
   .nav-pills {
@@ -107,9 +126,15 @@ span {
       a {
         padding: 0 15px;
         color: #fff;
+        border-radius: 0;
+        height: 80px;
+        display: inline-block;
+        line-height: 80px;
+        background-color: $blood-red;
+        transition: all 0.2s;
+
         &:hover {
-          background-color: #fff;
-          color: $blood-red;
+          background-color: $blood-dark-red;
         }
       }
     }
