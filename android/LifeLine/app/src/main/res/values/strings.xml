@@ -20,5 +20,7 @@
     <string name="menu_institutions">Institutions</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_logout">Logout</string>
+    <string name="twitter_login">Twitter login</string>
+    <string name="fb_login">Facebook login</string>
 
 </resources>

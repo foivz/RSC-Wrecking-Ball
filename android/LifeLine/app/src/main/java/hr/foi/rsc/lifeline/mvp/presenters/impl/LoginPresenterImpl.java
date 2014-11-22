@@ -1,7 +1,11 @@
 package hr.foi.rsc.lifeline.mvp.presenters.impl;
 
+import android.app.Activity;
+
 import com.parse.LogInCallback;
 import com.parse.ParseException;
+import com.parse.ParseFacebookUtils;
+import com.parse.ParseTwitterUtils;
 import com.parse.ParseUser;
 
 import hr.foi.rsc.lifeline.mvp.presenters.LoginPresenter;
@@ -25,6 +29,21 @@ public class LoginPresenterImpl implements LoginPresenter {
         canceled = false;
         loginView.showProgress();
         ParseUser.logInInBackground(username, password, logInCallback);
+    }
+
+    @Override
+    public void authenticateUserFb(Activity activity) {
+        canceled = false;
+        if(1==1) return;
+        loginView.showProgress();
+        ParseFacebookUtils.logIn(activity, logInCallback);
+    }
+
+    @Override
+    public void authenticateUserTwitter(Activity activity) {
+        canceled = false;
+        loginView.showProgress();
+        ParseTwitterUtils.logIn(activity, logInCallback);
     }
 
     private LogInCallback logInCallback =  new LogInCallback() {

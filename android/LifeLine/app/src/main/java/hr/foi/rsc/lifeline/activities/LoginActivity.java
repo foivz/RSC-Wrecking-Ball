@@ -58,6 +58,16 @@ public class LoginActivity extends BaseActivity implements LoginView {
         }
     }
 
+    @OnClick(R.id.button_fb_login)
+    protected void facebookLogin() {
+        loginPresenter.authenticateUserFb(this);
+    }
+
+    @OnClick(R.id.button_twitter_login)
+    protected void twitterLogin() {
+        loginPresenter.authenticateUserTwitter(this);
+    }
+
     @OnClick(R.id.button_register)
     protected void showRegisterScreen() {
         startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
