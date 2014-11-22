@@ -27,19 +27,19 @@
           <div ng-hide="loginClicked" class="login-button">
             <a ng-click="loginClicked=true" class="btn btn-primary btn-login">{{lang.login}}</a>
           </div>
-          <div ng-show="loginClicked" class="login-form">
-            <form accept-charset="utf-8">
-              <input class="form-control" type="text" ng-model="loginUser.username" placeholder="{{lang.username}}">
-              <input class="form-control" type="text" ng-model="loginUser.password" placeholder="{{lang.password}}">
-              <div class="login-submit">
-                <input class="btn btn-submit" type="button" ng-click="onRegisterClick()" value="{{lang.submit}}">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+              <div ng-show="loginClicked" class="login-form">
+                <form accept-charset="utf-8">
+                  <input class="form-control input-clear" type="text" ng-model="loginUser.username" placeholder="{{lang.username}}">
+                  <input class="form-control input-clear" type="password" ng-model="loginUser.password" placeholder="{{lang.password}}">
+                  <div class="login-submit">
+                    <input class="btn btn-submit" type="button" ng-click="onLoginClick()" value="{{lang.submit}}">
+                  </div>
+                </form>
               </div>
-            </form>
-          </div>
-          <div class="login-button">
-            <span>Or</span>
-            <a ng-href="#/register" class="link signup-link">{{lang.signup}}</a>
-          </div>
+            </div>
+
         </div>
       </div>
     </div>

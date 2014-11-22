@@ -1,9 +1,9 @@
 {
+  "appName": "Lifeline",
   "blood": "blood",
   "login": "Login",
   "signup": "Sign up",
   "submit": "Submit",
   "username": "Username",
   "password": "Password"
-
 }

@@ -4,6 +4,7 @@
 angular.module('rscwbApp')
   .controller('LoginCtrl', ['$rootScope', '$scope', function ($rootScope, $scope) {
     $scope.loginClicked = false;
+    $scope.registerClicked = false;
     $scope.loginUser = {};
 
     var user = new Parse.User();

@@ -1,6 +1,6 @@
 .login {
   position: relative;
-  top: 0;
+  top: -70px;
 
   .ll-logo {
     width: 100%;
@@ -17,23 +17,30 @@
       display: inline-block;
       li {
         display: inline-block;
+        a {
+          margin: 5px 5px;
+        }
       }
     }
   }
   .login-container {
     text-align: center;
 
-    .login-form {
-      width: 400px;
-      margin: 0 auto;
 
+    .login-form {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 0 30px;
       input {
-        padding: 0 10px;
+        margin: 10px 0;
       }
 
       .login-submit {
         text-align: right;
-        padding: 20px;
+        input {
+          margin: 0;
+        }
       }
     }
   }
