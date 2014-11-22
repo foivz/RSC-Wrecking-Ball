@@ -13,6 +13,9 @@
   "national": "National",
   "bloodType": "Blood type",
   "city": "City",
+  "pushNotification": "Push notification",
+  "eventTime": "Event time",
+  "eventLocation": "Event location",
   "institutionName": "Institution name",
   "removeInstitution": "Remove institution",
   "email": "E-mail",
@@ -26,5 +29,6 @@
   "updateBloodValues": "Update blood values",
   "name": "Name",
   "location": "Address",
+  "bloodNeeded": "Blood types:",
   "description": "Description"
 }

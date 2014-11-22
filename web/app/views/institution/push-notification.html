@@ -1,0 +1,28 @@
+<div class="data-form">
+  <form  accept-charset="utf-8">
+    <div>
+    <div>{{lang.eventLocation}}</div>
+      <input class="form-control input-clear" type="text" ng-model="notificationInfo.location" placeholder="{{lang.eventLocation}}">
+    </div>
+    <div>
+      <div>{{lang.eventTime}}</div>
+      <input class="form-control input-clear" type="text" ng-model="notificationInfo.time" placeholder="{{lang.eventTime}}">
+    </div>
+    <div class="">
+      <div>{{lang.bloodNeeded}}</div>
+      <div class="checkbox">
+        <label><input type="checkbox" value="">A+</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" value="">A-</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" value="">0+</label>
+      </div>
+    </div>
+  </form>
+  <div class="edit-btn-container text-right">
+    <a class="btn btn-submit" ng-click="pushNotification()">{{lang.pushNotification}}</a>
+  </div>
+</div>
+
