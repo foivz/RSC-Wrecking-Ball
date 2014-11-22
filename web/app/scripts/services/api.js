@@ -5,13 +5,13 @@ angular.module('rscwbApp')
     return {
       getLocalize: function(language) {
         return $http ({
-            method: 'GET',
-            url: 'lang/en.json'
-          }).then(
-            function(result) {
-              return result;
-            }
-          );
+          method: 'GET',
+          url: 'lang/en.json'
+        }).then(
+          function(result) {
+            return result;
+          }
+        );
       }
     };
   }]);
