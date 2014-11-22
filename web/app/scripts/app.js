@@ -36,6 +36,14 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
+      .when('/institution/home', {
+        templateUrl: 'views/institution/home.html',
+        controller: 'InstitutionHomeCtrl'
+      })
+      .when('/superadmin/home', {
+        templateUrl: 'views/superadmin/home.html',
+        controller: 'SuperadminHomeCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
