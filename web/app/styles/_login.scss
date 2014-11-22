@@ -26,6 +26,15 @@
     .login-form {
       width: 400px;
       margin: 0 auto;
+
+      input {
+        padding: 0 10px;
+      }
+
+      .login-submit {
+        text-align: right;
+        padding: 20px;
+      }
     }
   }
 }
