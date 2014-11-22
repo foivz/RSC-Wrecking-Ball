@@ -8,6 +8,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/select2/select2.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -33,6 +34,7 @@
           <li><a ng-href="#/institution/home">{{lang.home}}</a></li>
           <li><a ng-href="#/institution/info">{{lang.manageInfo}}</a></li>
           <li><a ng-href="#/login">{{lang.login}}</a></li>
+          <li><a ng-href="#/institution/push-notification">{{lang.pushNotification}}</a></li>
         </ul>
         </div>
         <div class="login-info">
@@ -40,6 +42,7 @@
             Cogwheel here
           </span>
           <a ng-click="onLogoutClick()">{{lang.logout}}</a>
+
         </div>
       </div>
     </div>
@@ -86,6 +89,7 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/select2/select2.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -100,6 +104,7 @@
         <script src="scripts/controllers/institution/info.js"></script>
         <script src="scripts/services/jointables.js"></script>
         <script src="scripts/controllers/superadmin/edit.js"></script>
+        <script src="scripts/controllers/institution/push-notification.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -105,7 +105,10 @@ angular.module('rscwbApp')
         Parse.Push.send({
           channels: ['all'],
           data: {
-              alert: "fffffffff"
+              alert: 'Hello you!',
+              eventId: 'testID',
+              time: '19:00',
+              location: '17.11.2014.'
             }
           }
         );

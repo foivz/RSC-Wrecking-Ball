@@ -56,6 +56,10 @@ angular
         templateUrl: 'views/superadmin/edit.html',
         controller: 'SuperadminEditCtrl'
       })
+      .when('/institution/push-notification', {
+        templateUrl: 'views/institution/push-notification.html',
+        controller: 'InstitutionPushNotificationCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
