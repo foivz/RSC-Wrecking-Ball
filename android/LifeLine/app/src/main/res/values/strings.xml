@@ -23,5 +23,7 @@
     <string name="twitter_login">Twitter login</string>
     <string name="fb_login">Facebook login</string>
     <string name="app_id">830063417017234</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
