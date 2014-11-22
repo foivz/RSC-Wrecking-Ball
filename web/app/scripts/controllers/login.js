@@ -8,6 +8,13 @@
  * Controller of the rscwbApp
  */
 angular.module('rscwbApp')
-  .controller('LoginCtrl', ['$scope;', function ($scope) {
-
+  .controller('LoginCtrl', ['$scope', function ($scope) {
+    $scope.loginClicked = false;
+    $scope.lang = {
+      login: "Login",
+      singup: "Sign up",
+      username: "Username",
+      password: "Password",
+      submit: "Submit"
+    }
   }]);

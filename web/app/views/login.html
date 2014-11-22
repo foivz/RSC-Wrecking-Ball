@@ -1,1 +1,42 @@
-<p>This is the login view.</p>
+<div class="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="ll-logo">
+
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="navbar">
+          <ul>
+            <li>
+              <a class="btn btn-primary">Button 1</a>
+            </li>
+            <li>
+              <a class="btn btn-primary">Button 2</a>
+            </li>
+            <li>
+              <a class="btn btn-primary">Button 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="login-container">
+          <div class="login-button">
+            <a ng-click="loginClicked=true" class="btn btn-login">{{lang.login}}</a>
+            <span>Or</span>
+            <a ng-href="#/register" class="link signup-link">{{lang.singup}}</a>
+          </div>
+          <div ng-show="loginClicked" class="login-form">
+            <form action="login_submit" method="get" accept-charset="utf-8">
+              <label>{{lang.username}}:<input class="form-control" type="text" name="" value=""></label>
+              <label>{{lang.password}}<input class="form-control" type="text" name="" value=""></label>
+              <input class="btn btn-submit" type="submit" name="" value="{{lang.submit}}">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
