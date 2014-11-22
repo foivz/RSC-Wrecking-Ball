@@ -13,5 +13,11 @@
   "national": "National",
   "internal": "Internal",
 
-  "manageBloodSupply": "Manage blood supply"
+  "manageBloodSupply": "Manage blood supply",
+  "manageInstitutionInfo": "Edit institution info",
+
+  "name": "Name",
+  "location": "Address",
+  "description": "Description"
+
 }

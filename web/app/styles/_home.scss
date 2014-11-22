@@ -1,18 +1,9 @@
-.super {
-  vertical-align: super;
-}
 
 .blood-levels-container {
   margin: 20px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding-bottom: 10px;
-
-  .edit-btn-container {
-    .btn {
-      margin-right: 20px;
-    }
-  }
 
   .blood-levels-type {
     font-size: 18px;
@@ -40,12 +31,25 @@
     .bck {
       position: absolute;
       bottom: 0;
-      height: 30px;
+      height: 0;
       width: 80px;
       background: red;
+      transition: height 0.3s;
     }
     .type {
       text-align: center;
     }
   }
+}
+.edit-btn-container {
+  .btn {
+    margin-right: 20px;
+  }
+}
+
+.institution-data-container {
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
 }
