@@ -4,6 +4,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "login";
 // endbower
 
+$blood-red: #EE4433;
+
 //GLOBALS
 
 .input-clear {
@@ -19,7 +21,7 @@ a {
 
 .btn {
   &.btn-submit {
-    background-color: #EE4433;
+    background-color: $blood-red;
     color: #fff;
   }
 }
@@ -37,7 +39,7 @@ span {
   position: absolute;
   top: 0;
   &.red {
-    background-color: #EE4433;
+    background-color: $blood-red;
   }
 }
 
@@ -45,8 +47,13 @@ span {
 
 .header {
   height: 70px;
+  padding: 20px;
+  line-height: 24px;
+  background-color: $blood-red;
+  color: #fff;
+
   .app-name {
-    line-height: 70px;
+    //line-height: 70px;
     font-size: 24px;
     padding: 0 10px;
     margin: 0;
@@ -55,5 +62,24 @@ span {
 
   .nav-pills {
     display: inline-block;
+
+    li {
+      a {
+        padding: 0 15px;
+        color: #fff;
+        &:hover {
+          background-color: #fff;
+          color: $blood-red;
+        }
+      }
+    }
+  }
+
+
+  .login-info {
+    text-align: right;
+    a {
+      color: #fff;
+    }
   }
 }
