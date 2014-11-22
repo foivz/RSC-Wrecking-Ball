@@ -30,8 +30,7 @@
         </activity>
         <activity
             android:name="hr.foi.rsc.lifeline.activities.MainActivity"
-            android:label="@string/title_activity_main"
-            android:noHistory="true">
+            android:label="@string/title_activity_main">
         </activity>
     </application>
 
