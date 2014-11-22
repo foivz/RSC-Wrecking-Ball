@@ -5,12 +5,28 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "login";
 @import "home";
 
-$blood-red: #EE4433;
-$blood-dark-red: #BB2211;
+$blood-red: #E74C3C;
+$blood-dark-red: #C13F31;
+$blood-light-red: #F8745C;
 
 //GLOBALS
 .btn {
   transition: all 0.2s;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.super {
+  vertical-align: super;
 }
 
 .input-clear {

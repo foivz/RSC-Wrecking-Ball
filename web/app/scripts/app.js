@@ -40,6 +40,10 @@ angular
         templateUrl: 'views/institution/home.html',
         controller: 'InstitutionHomeCtrl'
       })
+      .when('/institution/info', {
+        templateUrl: 'views/institution/info.html',
+        controller: 'InstitutionInfoCtrl'
+      })
       .when('/superadmin/home', {
         templateUrl: 'views/superadmin/home.html',
         controller: 'SuperadminHomeCtrl'

@@ -1,29 +1,77 @@
-.super {
-  vertical-align: super;
-}
+$blood-red: #E74C3C;
+$blood-dark-red: #C13F31;
+$blood-light-red: #F8745C;
 
 .blood-levels-container {
-  .blood-levels-type {
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-bottom: 10px;
 
+  .edit-btn-container {
+    .btn {
+      margin-right: 20px;
+    }
+  }
+
+  h4 {
+    font-size: 18px;
+    margin: 20px 0;
   }
   .blood-level {
     position: relative;
-    .frg {
+    margin-bottom: 10px;
+
+    .block {
       position: relative;
       width: 80px;
       height: 120px;
-      background: #222;
       margin: 0 auto;
+    }
+    .frg {
+      position: absolute;
+      top: 0;
+      height: 120px;
+      width: 80px;
+      background-color: #ccc;
+      z-index: 1;
+      opacity: 0.5;
     }
     .bck {
       position: absolute;
       bottom: 0;
-      height: 30px;
+      height: 0;
       width: 80px;
-      background: red;
+      background: $blood-red;
+      transition: height 0.3s;
     }
     .type {
+      position: absolute;
+      top: 20px;
       text-align: center;
+      width: 100%;
+      z-index: 2;
+      font-size: 20px;
+      color: #333;
+    }
+    .value {
+      text-align: center;
+      .unit {
+
+      }
+    }
+    .form {
+      input {
+        width: 100%;
+      }
     }
   }
+}
+
+
+.institution-data-container {
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
 }
