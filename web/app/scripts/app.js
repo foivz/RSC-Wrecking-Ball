@@ -1,13 +1,7 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name rscwbApp
- * @description
- * # rscwbApp
- *
- * Main module of the application.
- */
+/* global Parse */
+
 angular
   .module('rscwbApp', [
     'ngCookies',
@@ -15,6 +9,9 @@ angular
     'ngRoute',
     'ngSanitize'
   ]).run(['$rootScope', 'api', function ($rootScope, api){
+    Parse.initialize('Qz1N1B4aBwzmiszChrGKU37QalVXzZ8iew6hV2oH', 'nlsxXbzBGRIaZ7n2rouuK5dNQahzwjbbnaJQSPEj');
+
+    // loading languages
     api.getLocalize('hr').then(function(response) {
       if (!response || !response.data) {
         console.log('Loading texts failed.');
