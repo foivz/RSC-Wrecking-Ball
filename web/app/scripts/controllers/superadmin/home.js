@@ -66,18 +66,6 @@ angular.module('rscwbApp')
             console.log(error);
           }
         });
-
-        // this.institution.save({
-        //   isActive: false
-        // },
-        // {
-        //   success: function(inst) {
-        //     console.log(inst, 'institution is deleted');
-        //   },
-        //   error: function(inst, error) {
-        //     console.log(error);
-        //   }
-        // });
       };
 
       $scope.updateInstitution = function() {
