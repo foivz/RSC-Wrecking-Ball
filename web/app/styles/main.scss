@@ -12,6 +12,7 @@ $blood-light-red: #F8745C;
 //GLOBALS
 .btn {
   transition: all 0.2s;
+  border-radius: 0;
 }
 .left {
   float: left;
@@ -38,6 +39,10 @@ $blood-light-red: #F8745C;
 }
 a {
   cursor: pointer;
+}
+
+textarea {
+  resize: none;
 }
 
 body {

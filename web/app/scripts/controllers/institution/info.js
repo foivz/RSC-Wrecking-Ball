@@ -4,7 +4,7 @@ angular.module('rscwbApp')
   .controller('InstitutionInfoCtrl', ['$scope','joinTables',
     function ($scope, joinTables) {
       $scope.blood = [];
-      $scope.instititution = {};
+      $scope.institution = {};
 
       //joinTables.join($scope.currentUser.id).then(function(instititution) {
       joinTables.join("4AiydVM8JP").then(function(institution) {
@@ -31,7 +31,7 @@ angular.module('rscwbApp')
         }
 
         for(var i in values) {
-          $scope.blood[i].height = values[i]/max*100;
+          $scope.blood[i].height = values[i]/max*115;
         }
       }, function(error) {
         console.log(error);
@@ -41,7 +41,7 @@ angular.module('rscwbApp')
         //joinTables.join($scope.currentUser.id).then(function(instititution) {
         joinTables.join("4AiydVM8JP").then(function(institution) {
           for(var i = 0; i < institution.blood.length; i++) {
-            instititution.blood[i].save({
+            institution.blood[i].save({
               value: $scope.blood[i].value + ''
             }, {
               succes: function(result) {
@@ -52,6 +52,23 @@ angular.module('rscwbApp')
               }
             })
           }
+        });
+      }
+      $scope.updateInstitution = function() {
+        //joinTables.join($scope.currentUser.id).then(function(instititution) {
+        joinTables.join("4AiydVM8JP").then(function(institution) {
+          institution.institution.save({
+            name: $scope.institution.name,
+            city: $scope.institution.location,
+            //description: $scope.institution.description
+          }, {
+            succes: function(result) {
+              console.log("updated blood values", result)
+            },
+            error: function(result, error) {
+              console.log(error);
+            }
+          })
         });
       }
   }]);
