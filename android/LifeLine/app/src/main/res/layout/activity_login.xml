@@ -49,43 +49,36 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/sign_in" />
 
-            <LinearLayout
+            <com.facebook.widget.LoginButton
+                android:id="@+id/button_fb_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp" />
 
-                <Button
-                    android:id="@+id/button_fb_login"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="@string/fb_login" />
+            <Button
+                android:id="@+id/button_twitter_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/twitter_login"
+                android:layout_marginTop="10dp"/>
 
-                <Button
-                    android:id="@+id/button_twitter_login"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="@string/twitter_login" />
-
-            </LinearLayout>
+            <Button
+                android:id="@+id/button_register"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@drawable/transparent_black_ten_percent"
+                android:text="@string/register" />
 
             <Button
                 android:id="@+id/button_forgot_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:padding="5dp"
                 android:background="@drawable/transparent_black_ten_percent"
                 android:text="@string/forgot_password" />
-
-            <Button
-                android:id="@+id/button_register"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:background="@drawable/transparent_black_ten_percent"
-                android:text="@string/register" />
 
         </LinearLayout>
     </RelativeLayout>

@@ -22,5 +22,6 @@
     <string name="menu_logout">Logout</string>
     <string name="twitter_login">Twitter login</string>
     <string name="fb_login">Facebook login</string>
+    <string name="app_id">830063417017234</string>
 
 </resources>

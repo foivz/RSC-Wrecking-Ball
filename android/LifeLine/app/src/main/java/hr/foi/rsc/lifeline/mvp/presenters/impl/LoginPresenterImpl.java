@@ -34,19 +34,16 @@ public class LoginPresenterImpl implements LoginPresenter {
     @Override
     public void authenticateUserFb(Activity activity) {
         canceled = false;
-        if(1==1) return;
-        loginView.showProgress();
         ParseFacebookUtils.logIn(activity, logInCallback);
     }
 
     @Override
     public void authenticateUserTwitter(Activity activity) {
         canceled = false;
-        loginView.showProgress();
         ParseTwitterUtils.logIn(activity, logInCallback);
     }
 
-    private LogInCallback logInCallback =  new LogInCallback() {
+    private LogInCallback logInCallback = new LogInCallback() {
         @Override
         public void done(ParseUser parseUser, ParseException e) {
             if (canceled) {
@@ -58,7 +55,9 @@ public class LoginPresenterImpl implements LoginPresenter {
             if (parseUser != null) {
                 loginView.navigateToHome();
             } else {
-                loginView.showError(e.getMessage());
+                if (e != null && e.getMessage() != null) {
+                    loginView.showError(e.getMessage());
+                }
             }
         }
     };
