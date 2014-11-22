@@ -2,20 +2,32 @@
   <div class="container">
     <div class="institution-data-container">
       <h4>{{lang.institutionInfo}}</h4>
-      <div class="data-field">
-        <span class="name">{{lang.name}}:</span>
-        <span class="value">Institucija krvarenja</span>
+      <div ng-hide="formShow" class="data-fields">
+        <div class="data-field">
+          <span class="name">{{lang.name}}:</span>
+          <span class="value">Institucija krvarenja</span>
+        </div>
+        <div class="data-field">
+          <span class="name">{{lang.location}}:</span>
+          <span class="value">Ulica krvi 92b</span>
+        </div>
+        <div class="data-field">
+          <span class="name">{{lang.description}}:</span>
+          <span class="value">Vadimo krajnike i krv</span>
+        </div>
+        <div class="edit-btn-container text-right">
+          <a class="btn btn-submit" ng-click="formShow=true">{{lang.manageInstitutionInfo}}</a>
+        </div>
       </div>
-      <div class="data-field">
-        <span class="name">{{lang.location}}:</span>
-        <span class="value">Ulica krvi 92b</span>
-      </div>
-      <div class="data-field">
-        <span class="name">{{lang.description}}:</span>
-        <span class="value">Vadimo krajnike i krv</span>
-      </div>
-      <div class="edit-btn-container text-right">
-        <a class="btn btn-submit" ng-href="#/institution/manage">{{lang.manageInstitutionInfo}}</a>
+      <div ng-show="formShow" class="data-form">
+        <form  accept-charset="utf-8">
+          <input class="form-control input-clear" type="text" ng-model="loginUser.username" placeholder="{{lang.name}}">
+          <input class="form-control input-clear" type="text" ng-model="loginUser.password" placeholder="{{lang.location}}">
+          <input class="form-control input-clear" type="textarea" ng-model="loginUser.password" placeholder="{{lang.description}}">
+        </form>
+        <div class="edit-btn-container text-right">
+          <a class="btn btn-submit" ng-click="formShow=false">{{lang.updateInstitutionInfo}}</a>
+        </div>
       </div>
     </div>
     <div class="blood-levels-container">

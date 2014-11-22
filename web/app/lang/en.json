@@ -16,7 +16,8 @@
   "institutionInfo": "Institution information",
 
   "manageBloodSupply": "Manage blood supply",
-  "manageInstitutionInfo": "Edit institution info",
+  "manageInstitutionInfo": "Edit institution information",
+  "updateInstitutionInfo": "Update institution information",
   "updateBloodValues": "Update blood values",
 
   "name": "Name",
