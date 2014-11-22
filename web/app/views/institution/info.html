@@ -5,15 +5,15 @@
       <div ng-hide="formShow" class="data-fields">
         <div class="data-field">
           <span class="name">{{lang.name}}:</span>
-          <span class="value">Institucija krvarenja</span>
+          <span class="value">{{institution.name}}</span>
         </div>
         <div class="data-field">
           <span class="name">{{lang.location}}:</span>
-          <span class="value">Ulica krvi 92b</span>
+          <span class="value">{{institution.location}}</span>
         </div>
         <div class="data-field">
           <span class="name">{{lang.description}}:</span>
-          <span class="value">Vadimo krajnike i krv</span>
+          <span class="value">{{institution.description}}</span>
         </div>
         <div class="edit-btn-container text-right">
           <a class="btn btn-submit" ng-click="formShow=true">{{lang.manageInstitutionInfo}}</a>
@@ -21,11 +21,12 @@
       </div>
       <div ng-show="formShow" class="data-form">
         <form  accept-charset="utf-8">
-          <input class="form-control input-clear" type="text" ng-model="loginUser.username" placeholder="{{lang.name}}">
-          <input class="form-control input-clear" type="text" ng-model="loginUser.password" placeholder="{{lang.location}}">
-          <input class="form-control input-clear" type="textarea" ng-model="loginUser.password" placeholder="{{lang.description}}">
+          <input class="form-control input-clear" type="text" ng-model="institution.name" placeholder="{{lang.name}}">
+          <input class="form-control input-clear" type="text" ng-model="institution.location" placeholder="{{lang.location}}">
+          <input class="form-control input-clear" type="textarea" ng-model="institution.description" placeholder="{{lang.description}}">
         </form>
         <div class="edit-btn-container text-right">
+          <a class="btn btn-submit" ng-click="formShow=false">{{lang.cancel}}</a>
           <a class="btn btn-submit" ng-click="formShow=false">{{lang.updateInstitutionInfo}}</a>
         </div>
       </div>
@@ -43,13 +44,13 @@
               </div>
               <div class="value">{{b.value}}<span class="unit">L</span></div>
               <div class="form">
-                <input type="number" class="form-control input-clear" value="{{b.value}}" placeholder="{{b.value}}">
+                <input type="number" class="form-control input-clear" ng-model="b.value" placeholder="{{b.value}}">
               </div>
             </div>
           </div>
         </div>
         <div class="edit-btn-container text-right">
-          <a class="btn btn-submit" ng-href="#/institution/manage">{{lang.updateBloodValues}}</a>
+          <div class="btn btn-submit" ng-click="updateBloodValues()">{{lang.updateBloodValues}}</div>
         </div>
       </div>
     </div>
