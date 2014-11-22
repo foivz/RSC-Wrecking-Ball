@@ -38,7 +38,7 @@ angular.module('rscwbApp')
       user.signUp({
         username: $scope.loginUser.username,
         password: $scope.loginUser.password,
-        isDonor: false
+        type: 'superadmin'
       },
       {
         success: function(user) {
