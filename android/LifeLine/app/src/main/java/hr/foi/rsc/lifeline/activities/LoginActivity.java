@@ -1,5 +1,6 @@
 package hr.foi.rsc.lifeline.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -57,6 +58,11 @@ public class LoginActivity extends BaseActivity implements LoginView {
         if (!username.isEmpty() && !password.isEmpty()) {
             loginPresenter.authenticateUser(username, password);
         }
+    }
+
+    @OnClick(R.id.button_register)
+    protected void showRegisterScreen() {
+        startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
     }
 
     @Override

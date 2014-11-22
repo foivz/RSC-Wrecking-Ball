@@ -5,9 +5,14 @@
     <string name="forgot_password">Forgot password?</string>
     <string name="register">Register</string>
     <string name="sign_in">Sign in</string>
+    <string name="email">Email</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
     <string name="field_required">This field is required</string>
+    <string name="passwords_must_match">Passwords must match</string>
     <string name="loading_message">Loading…</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
