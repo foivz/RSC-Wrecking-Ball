@@ -4,17 +4,18 @@
       <div class="container-fluid">
         <h4>{{lang.national}}</h4>
         <div class="row">
-          <div class="col-xs-6 col-sm-3">
+
+          <div class="col-xs-6 col-sm-3" ng-repeat="b in blood">
             <div class="blood-level">
               <div class="block">
                 <div class="frg"></div>
-                <div class="bck" style="height: {{type0height}}px"></div>
-                <div class="type">0<span class="super">-</span></div>
+                <div class="bck" style="height: {{b.value}}px"></div>
+                <div class="type">{{b.type}}<span class="super">-</span></div>
               </div>
-              <div class="value">50 <span class="unit">L</span></div>
+              <div class="value">{{b.value}}<span class="unit">L</span></div>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-3">
+<!--           <div class="col-xs-6 col-sm-3">
             <div class="blood-level">
               <div class="block">
                 <div class="frg"></div>
@@ -83,7 +84,7 @@
               </div>
               <div class="value">50 <span class="unit">L</span></div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="edit-btn-container text-right">
