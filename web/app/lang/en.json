@@ -1,7 +1,7 @@
 {
   "appName": "Lifeline",
   "home": "Home",
-
+  "manageInfo": "Manage institution",
 
   "blood": "blood",
   "login": "Login",
@@ -13,8 +13,11 @@
   "national": "National",
   "internal": "Internal",
 
+  "institutionInfo": "Institution information",
+
   "manageBloodSupply": "Manage blood supply",
   "manageInstitutionInfo": "Edit institution info",
+  "updateBloodValues": "Update blood values",
 
   "name": "Name",
   "location": "Address",

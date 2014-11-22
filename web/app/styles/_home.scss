@@ -1,3 +1,6 @@
+$blood-red: #E74C3C;
+$blood-dark-red: #C13F31;
+$blood-light-red: #F8745C;
 
 .blood-levels-container {
   margin: 20px 0;
@@ -5,7 +8,13 @@
   border-radius: 5px;
   padding-bottom: 10px;
 
-  .blood-levels-type {
+  .edit-btn-container {
+    .btn {
+      margin-right: 20px;
+    }
+  }
+
+  h4 {
     font-size: 18px;
     margin: 20px 0;
   }
@@ -33,23 +42,36 @@
       bottom: 0;
       height: 0;
       width: 80px;
-      background: red;
+      background: $blood-red;
       transition: height 0.3s;
     }
     .type {
+      position: absolute;
+      top: 20px;
       text-align: center;
+      width: 100%;
+      z-index: 2;
+      font-size: 20px;
+      color: #333;
+    }
+    .value {
+      text-align: center;
+      .unit {
+
+      }
+    }
+    .form {
+      input {
+        width: 100%;
+      }
     }
   }
 }
-.edit-btn-container {
-  .btn {
-    margin-right: 20px;
-  }
-}
+
 
 .institution-data-container {
   margin: 20px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 10px;
+  padding: 20px;
 }
