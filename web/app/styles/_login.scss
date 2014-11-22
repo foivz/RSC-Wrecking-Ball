@@ -1,6 +1,19 @@
-.header,
-.marketing,
-.footer {
-  padding-left: 55px;
-  padding-right: 55px;
+.login {
+  position: relative;
+  top: 0;
+
+  .ll-logo {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    img {
+      display: inline-block;
+    }
+  }
+  .navbar {
+    ul {
+      list-style: none;
+    }
+  }
 }
