@@ -1,6 +1,7 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+@import "login";
 // endbower
 
 //GLOBALS
@@ -8,7 +9,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 .input-clear {
   box-shadow: none;
   border-radius: 0px;
-
   &:focus {
     box-shadow: none;
   }
