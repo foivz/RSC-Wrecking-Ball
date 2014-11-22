@@ -10,5 +10,8 @@
   "submit": "Submit",
   "username": "Username",
   "password": "Password",
-  "national": "National"
+  "national": "National",
+  "internal": "Internal",
+
+  "manageBloodSupply": "Manage blood supply"
 }

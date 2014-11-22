@@ -12,6 +12,18 @@ $blood-dark-red: #BB2211;
 .btn {
   transition: all 0.2s;
 }
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
 
 .input-clear {
   box-shadow: none;

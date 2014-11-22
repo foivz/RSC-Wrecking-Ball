@@ -3,17 +3,39 @@
 }
 
 .blood-levels-container {
-  .blood-levels-type {
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-bottom: 10px;
 
+  .edit-btn-container {
+    .btn {
+      margin-right: 20px;
+    }
+  }
+
+  .blood-levels-type {
+    font-size: 18px;
+    margin: 20px 0;
   }
   .blood-level {
     position: relative;
-    .frg {
+    margin-bottom: 10px;
+
+    .block {
       position: relative;
       width: 80px;
       height: 120px;
-      background: #222;
       margin: 0 auto;
+    }
+    .frg {
+      position: absolute;
+      top: 0;
+      height: 120px;
+      width: 80px;
+      background-color: #ccc;
+      z-index: 1;
+      opacity: 0.5;
     }
     .bck {
       position: absolute;

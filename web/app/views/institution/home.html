@@ -1,20 +1,22 @@
 <div class="home">
   <div class="container">
     <div class="blood-levels-container">
-      <div class="blood-levels-type">{{lang.national}}</div>
       <div class="container">
+        <div class="blood-levels-type">{{lang.national}}</div>
         <div class="row">
           <div class="col-xs-6 col-sm-3">
             <div class="blood-level">
-              <div class="frg">
-                <div class="bck"></div>
+              <div class="block">
+                <div class="frg"></div>
+                <div class="bck" style="height: {{type0height}}px"></div>
               </div>
               <div class="type">0<span class="super">-</span></div>
             </div>
           </div>
           <div class="col-xs-6 col-sm-3">
             <div class="blood-level">
-              <div class="frg">
+              <div class="block">
+                <div class="frg"></div>
                 <div class="bck"></div>
               </div>
               <div class="type">A<span class="super">-</span></div>
@@ -22,7 +24,8 @@
           </div>
           <div class="col-xs-6 col-sm-3">
             <div class="blood-level">
-              <div class="frg">
+              <div class="block">
+                <div class="frg"></div>
                 <div class="bck"></div>
               </div>
               <div class="type">B<span class="super">-</span></div>
@@ -30,7 +33,8 @@
           </div>
           <div class="col-xs-6 col-sm-3">
             <div class="blood-level">
-              <div class="frg">
+              <div class="block">
+                <div class="frg"></div>
                 <div class="bck"></div>
               </div>
               <div class="type">AB<span class="super">-</span></div>
@@ -38,7 +42,8 @@
           </div>
           <div class="col-xs-6 col-sm-3">
             <div class="blood-level">
-              <div class="frg">
+              <div class="block">
+                <div class="frg"></div>
                 <div class="bck"></div>
               </div>
               <div class="type">0<span class="super">+</span></div>
@@ -46,7 +51,8 @@
           </div>
           <div class="col-xs-6 col-sm-3">
             <div class="blood-level">
-              <div class="frg">
+              <div class="block">
+                <div class="frg"></div>
                 <div class="bck"></div>
               </div>
               <div class="type">A<span class="super">+</span></div>
@@ -54,7 +60,8 @@
           </div>
           <div class="col-xs-6 col-sm-3">
             <div class="blood-level">
-              <div class="frg">
+              <div class="block">
+                <div class="frg"></div>
                 <div class="bck"></div>
               </div>
               <div class="type">B<span class="super">+</span></div>
@@ -62,7 +69,8 @@
           </div>
           <div class="col-xs-6 col-sm-3">
             <div class="blood-level">
-              <div class="frg">
+              <div class="block">
+                <div class="frg"></div>
                 <div class="bck"></div>
               </div>
               <div class="type">AB<span class="super">+</span></div>
@@ -70,7 +78,92 @@
           </div>
         </div>
       </div>
+      <div class="edit-btn-container text-right">
+        <a class="btn btn-submit" ng-href="#/institution/manage">{{lang.manageBloodSupply}}</a>
+      </div>
+    </div>
+
+    <div class="blood-levels-container">
+      <div class="container">
+        <div class="blood-levels-type">{{lang.internal}}</div>
+        <div class="row">
+          <div class="col-xs-6 col-sm-3">
+            <div class="blood-level">
+              <div class="block">
+                <div class="frg"></div>
+                <div class="bck"></div>
+              </div>
+              <div class="type">0<span class="super">-</span></div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div class="blood-level">
+              <div class="block">
+                <div class="frg"></div>
+                <div class="bck"></div>
+              </div>
+              <div class="type">A<span class="super">-</span></div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div class="blood-level">
+              <div class="block">
+                <div class="frg"></div>
+                <div class="bck"></div>
+              </div>
+              <div class="type">B<span class="super">-</span></div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div class="blood-level">
+              <div class="block">
+                <div class="frg"></div>
+                <div class="bck"></div>
+              </div>
+              <div class="type">AB<span class="super">-</span></div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div class="blood-level">
+              <div class="block">
+                <div class="frg"></div>
+                <div class="bck"></div>
+              </div>
+              <div class="type">0<span class="super">+</span></div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div class="blood-level">
+              <div class="block">
+                <div class="frg"></div>
+                <div class="bck"></div>
+              </div>
+              <div class="type">A<span class="super">+</span></div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div class="blood-level">
+              <div class="block">
+                <div class="frg"></div>
+                <div class="bck"></div>
+              </div>
+              <div class="type">B<span class="super">+</span></div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div class="blood-level">
+              <div class="block">
+                <div class="frg"></div>
+                <div class="bck"></div>
+              </div>
+              <div class="type">AB<span class="super">+</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-btn-container text-right">
+        <a class="btn btn-submit" ng-href="#/institution/manage">{{lang.manageBloodSupply}}</a>
+      </div>
     </div>
   </div>
 </div>
-
