@@ -20,14 +20,26 @@
         </div>
       </div>
       <div ng-show="formShow" class="data-form">
-        <form  accept-charset="utf-8">
-          <input class="form-control input-clear" type="text" ng-model="institution.name" placeholder="{{lang.name}}">
-          <input class="form-control input-clear" type="text" ng-model="institution.location" placeholder="{{lang.location}}">
-          <input class="form-control input-clear" type="textarea" ng-model="institution.description" placeholder="{{lang.description}}">
+        <form accept-charset="utf-8">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control input-clear" type="text" ng-model="institution.name" placeholder="{{lang.name}}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control input-clear" type="text" ng-model="institution.location" placeholder="{{lang.location}}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <input class="form-control input-clear" type="text" ng-model="institution.description" placeholder="{{lang.description}}">
+            </div>
+          </div>
         </form>
         <div class="edit-btn-container text-right">
           <a class="btn btn-submit" ng-click="formShow=false">{{lang.cancel}}</a>
-          <a class="btn btn-submit" ng-click="formShow=false">{{lang.updateInstitutionInfo}}</a>
+          <a class="btn btn-submit" ng-click="formShow=false; updateInstitution()">{{lang.updateInstitutionInfo}}</a>
         </div>
       </div>
     </div>
@@ -39,7 +51,7 @@
             <div class="blood-level">
               <div class="block">
                 <div class="frg"></div>
-                <div class="bck" style="height: {{b.height}}%;"></div>
+                <div class="bck" style="height: {{b.height}}px;"></div>
                 <div class="type">{{b.type}}<span class="super">{{b.super}}</span></div>
               </div>
               <div class="value">{{b.value}}<span class="unit">L</span></div>

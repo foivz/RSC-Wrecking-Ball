@@ -18,7 +18,7 @@ angular.module('rscwbApp')
           $scope.bloodInternal[i] = { value: att.get('value'), type: att.get('bloodType').slice(0, -1), super: att.get('bloodType').slice(-1) };
         }
         for(var i in values) {
-          $scope.bloodInternal[i].height = values[i]/max*100;
+          $scope.bloodInternal[i].height = values[i]/max*115;
         }
       }, function(error) {
         console.log(error);
