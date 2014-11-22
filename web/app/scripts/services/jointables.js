@@ -1,4 +1,5 @@
 'use strict';
+/* global Parse */
 
 angular.module('rscwbApp')
   .service('joinTables', ['$q', function ($q) {
@@ -34,13 +35,13 @@ angular.module('rscwbApp')
                   console.log(error);
                   returnResult.reject(error);
                 }
-              })
+              });
             },
             error: function(result, error) {
               console.log(error);
               returnResult.reject(error);
             }
-          })
+          });
         },
         error: function(result, error) {
           console.log(error);

@@ -10,7 +10,7 @@ angular
     'ngSanitize'
   ]).run(['$rootScope', 'api', '$location', function ($rootScope, api, $location){
     Parse.initialize('Qz1N1B4aBwzmiszChrGKU37QalVXzZ8iew6hV2oH', 'nlsxXbzBGRIaZ7n2rouuK5dNQahzwjbbnaJQSPEj');
-
+// debugger
     $rootScope.changeView = function(view) {
       $location.path(view);
     };

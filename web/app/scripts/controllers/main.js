@@ -100,4 +100,15 @@ angular.module('rscwbApp')
           }
         });
       };
+
+      $scope.makePush = function() {
+        Parse.Push.send({
+          channels: ['all'],
+          data: {
+              alert: "fffffffff"
+            }
+          }
+        );
+      };
+
     }]);
