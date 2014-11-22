@@ -36,7 +36,8 @@ angular.module('rscwbApp')
           institutions.save({
             userObjectId: currentUserID,
             name: $scope.userData.name,
-            city: $scope.userData.city
+            city: $scope.userData.city,
+            isActive: true
           },
           {
             success: function(user) {

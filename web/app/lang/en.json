@@ -10,5 +10,8 @@
   "submit": "Submit",
   "username": "Username",
   "password": "Password",
-  "national": "National"
+  "national": "National",
+  "institutionName": "Institution name",
+  "removeInstitution": "Remove institution",
+  "editInstitution": "Edit institution"
 }
