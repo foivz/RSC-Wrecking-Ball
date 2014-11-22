@@ -1,7 +1,11 @@
 {
   "name": "rscwb",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.10.2",
+    "gzippo": "^0.2.0",
+    "morgan": "^1.5.0"
+  },
   "devDependencies": {
     "grunt": "^0.4.1",
     "grunt-autoprefixer": "^0.7.3",
