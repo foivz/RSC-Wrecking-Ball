@@ -14,7 +14,7 @@ angular.module('rscwbApp')
         this.hasError = true;
         this.msg = msg;
       }
-    }
+    };
 
     var user = new Parse.User();
 
@@ -29,7 +29,7 @@ angular.module('rscwbApp')
         error: function(user, error) {
           console.log('error', error);
           $scope.error.show(error.message);
-          $scope.$apply()
+          $scope.$apply();
         }
       });
     };
