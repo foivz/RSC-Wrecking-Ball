@@ -1,6 +1,8 @@
 $blood-red: #E74C3C;
 $blood-dark-red: #C13F31;
 $blood-light-red: #F8745C;
+$dark-grey: #383B40;
+$light-grey: #A7A9AC;
 
 .login {
   position: relative;
@@ -29,10 +31,6 @@ $blood-light-red: #F8745C;
   }
   .login-container {
     text-align: center;
-
-    .link {
-      color: $blood-red;
-    }
 
     .login-form {
       padding: 20px;
