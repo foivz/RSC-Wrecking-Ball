@@ -67,8 +67,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     @Override
     public void navigateToHome() {
-        // TODO
-        Toast.makeText(this, "Login success!", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
     }
 
     @Override

@@ -1,5 +1,6 @@
 package hr.foi.rsc.lifeline.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.EditText;
@@ -99,6 +100,6 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
 
     @Override
     public void onSuccess() {
-        // TODO show home
+        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
     }
 }
