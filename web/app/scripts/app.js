@@ -14,8 +14,14 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize'
-  ]).run([function (){
+  ]).run(['$rootScope', 'api', function ($rootScope, api){
+    api.getLocalize('hr').then(function(response) {
+      if (!response || !response.data) {
+        console.log('Loading texts failed.');
+      }
 
+      $rootScope.lang = response.data;
+    });
   }])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
