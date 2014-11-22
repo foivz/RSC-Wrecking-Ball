@@ -9,6 +9,7 @@ import com.parse.ParseUser;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import butterknife.OnLongClick;
 import hr.foi.rsc.lifeline.R;
 import hr.foi.rsc.lifeline.mvp.presenters.LoginPresenter;
 import hr.foi.rsc.lifeline.mvp.presenters.impl.LoginPresenterImpl;
@@ -56,6 +57,13 @@ public class LoginActivity extends BaseActivity implements LoginView {
         if (!username.isEmpty() && !password.isEmpty()) {
             loginPresenter.authenticateUser(username, password);
         }
+    }
+
+    @OnLongClick(R.id.image_logo)
+    protected boolean fillInloginCredentials() {
+        usernameText.setText("test@example.com");
+        passwordText.setText("test");
+        return true;
     }
 
     @OnClick(R.id.button_fb_login)

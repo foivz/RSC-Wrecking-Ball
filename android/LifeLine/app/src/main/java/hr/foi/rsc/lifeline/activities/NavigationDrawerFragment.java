@@ -21,10 +21,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import hr.foi.rsc.lifeline.R;
+import hr.foi.rsc.lifeline.adapters.MenuAdapter;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -66,6 +66,8 @@ public class NavigationDrawerFragment extends Fragment {
 
     private boolean mUserLearnedDrawer;
 
+    private MenuAdapter menuAdapter;
+
     public NavigationDrawerFragment() {
     }
 
@@ -99,17 +101,16 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(
-            getActionBar().getThemedContext(),
-            android.R.layout.simple_list_item_activated_1,
-            android.R.id.text1,
-            new String[]{
-                getString(R.string.menu_home),
-                getString(R.string.menu_profile),
-                getString(R.string.menu_institutions),
-                getString(R.string.menu_settings),
-                getString(R.string.menu_logout),
-            }));
+
+        menuAdapter = new MenuAdapter(getActivity(), 0, new hr.foi.rsc.lifeline.models.MenuItem[]{
+            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_home, R.drawable.ic_launcher),
+            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_profile, R.drawable.ic_launcher),
+            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_institutions, R.drawable.ic_launcher),
+            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_settings, R.drawable.ic_launcher),
+            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_logout, R.drawable.ic_launcher),
+        });
+
+        mDrawerListView.setAdapter(menuAdapter);
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
     }
 
@@ -261,6 +262,14 @@ public class NavigationDrawerFragment extends Fragment {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public hr.foi.rsc.lifeline.models.MenuItem getItem(int position) {
+        if(menuAdapter != null) {
+            return menuAdapter.getItem(position);
+        }
+
+        return null;
     }
 
     /**
