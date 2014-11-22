@@ -5,8 +5,12 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "login";
 
 $blood-red: #EE4433;
+$blood-dark-red: #BB2211;
 
 //GLOBALS
+.btn {
+  transition: all 0.2s;
+}
 
 .input-clear {
   box-shadow: none;
@@ -23,6 +27,25 @@ a {
   &.btn-submit {
     background-color: $blood-red;
     color: #fff;
+    &:hover {
+      background-color: $blood-dark-red;
+    }
+  }
+  &.btn-red {
+    background-color: $blood-red;
+    color: #fff;
+    &:hover {
+      background-color: #fff;
+      color: $blood-red;
+    }
+  }
+  &.btn-dark-red {
+    background-color: $blood-dark-red;
+    color: #fff;
+    &:hover {
+      background-color: #fff;
+      color: $blood-dark-red;
+    }
   }
 }
 
