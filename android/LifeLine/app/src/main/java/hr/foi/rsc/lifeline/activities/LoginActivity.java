@@ -33,8 +33,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
         loginPresenter = new LoginPresenterImpl(this);
 
         if (ParseUser.getCurrentUser() != null) {
-            ParseUser.logOut();
-//            navigateToHome();
+            navigateToHome();
         }
     }
 

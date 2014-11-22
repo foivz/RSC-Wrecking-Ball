@@ -12,14 +12,13 @@
     <string name="field_required">This field is required</string>
     <string name="passwords_must_match">Passwords must match</string>
     <string name="loading_message">Loading…</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_example">Example action</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_profile">Profile Overview</string>
+    <string name="menu_institutions">Institutions</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_logout">Logout</string>
 
 </resources>
