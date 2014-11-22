@@ -66,33 +66,22 @@ angular.module('rscwbApp')
             console.log(error);
           }
         });
+      };
 
+      $scope.updateInstitution = function() {
+        $scope.changeView('superadmin/edit/:id');
+        // debugger
         // this.institution.save({
-        //   isActive: false
+        //   username: 'Trvtko'
         // },
         // {
+        //   useMasterKey: true,
         //   success: function(inst) {
-        //     console.log(inst, 'institution is deleted');
+        //     console.log(inst, 'institution is updated');
         //   },
         //   error: function(inst, error) {
         //     console.log(error);
         //   }
         // });
-      };
-
-      $scope.updateInstitution = function() {
-        // debugger
-        this.institution.save({
-          username: 'Trvtko'
-        },
-        {
-          useMasterKey: true,
-          success: function(inst) {
-            console.log(inst, 'institution is updated');
-          },
-          error: function(inst, error) {
-            console.log(error);
-          }
-        });
       };
     }]);

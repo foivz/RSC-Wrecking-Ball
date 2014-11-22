@@ -1,1 +1,1 @@
-<p>This is the superadmin/home view.</p>
+<table class="table"> <thead> <td>{{lang.institutionName}} <td> <td>  <tbody> <tr ng-repeat="institution in institutions"> <td>{{institution.get('name')}} <td ng-click="removeInstitution()">{{lang.removeInstitution}} <td ng-click="updateInstitution()">{{lang.editInstitution}}   </table>
