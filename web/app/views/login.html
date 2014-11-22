@@ -31,10 +31,12 @@
             <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
               <div ng-show="loginClicked" class="login-form">
                 <form accept-charset="utf-8">
+                  <span ng-show="error.hasError" class="error">{{error.msg}}</span>
                   <input class="form-control input-clear" type="text" ng-model="loginUser.username" placeholder="{{lang.username}}">
                   <input class="form-control input-clear" type="password" ng-model="loginUser.password" placeholder="{{lang.password}}">
                   <div class="login-submit">
-                    <input class="btn btn-submit" type="button" ng-click="onLoginClick()" value="{{lang.submit}}">
+                    <input class="btn btn-submit" type="submit" ng-click="onLoginClick()" value="{{lang.submit}}">
+                    <input class="btn btn-submit" type="button" ng-click="onRegisterClick()" value="Register">
                   </div>
                 </form>
               </div>

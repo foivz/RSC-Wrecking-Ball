@@ -7,6 +7,15 @@ angular.module('rscwbApp')
     $scope.registerClicked = false;
     $scope.loginUser = {};
 
+    $scope.error = {
+      hasError: false,
+      msg: '',
+      show: function(msg) {
+        this.hasError = true;
+        this.msg = msg;
+      }
+    }
+
     var user = new Parse.User();
 
     $scope.onLoginClick = function () {
@@ -19,6 +28,8 @@ angular.module('rscwbApp')
         },
         error: function(user, error) {
           console.log('error', error);
+          $scope.error.show(error.message);
+          $scope.$apply()
         }
       });
     };
