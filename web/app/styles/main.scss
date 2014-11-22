@@ -4,10 +4,13 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 // endbower
 @import "login";
 @import "home";
+@import "superadmin";
 
 $blood-red: #E74C3C;
 $blood-dark-red: #C13F31;
 $blood-light-red: #F8745C;
+$dark-grey: #383B40;
+$light-grey: #A7A9AC;
 
 //GLOBALS
 .btn {
@@ -47,6 +50,13 @@ textarea {
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+.link {
+  color: $blood-red;
+  &:hover {
+    color: $blood-dark-red;
+  }
 }
 
 .btn {
