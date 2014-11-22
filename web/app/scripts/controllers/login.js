@@ -9,7 +9,7 @@ angular.module('rscwbApp')
     var user = new Parse.User();
 
     $scope.onLoginClick = function () {
-      Parse.User.logIn($scope.userData.username, $scope.userData.password, {
+      Parse.User.logIn($scope.loginUser.username, $scope.loginUser.password, {
         success: function(user) {
           console.log('user logged in', user);
           $rootScope.currentUser = Parse.User.current();
@@ -25,7 +25,8 @@ angular.module('rscwbApp')
     $scope.onRegisterClick = function() {
       user.signUp({
         username: $scope.loginUser.username,
-        password: $scope.loginUser.password
+        password: $scope.loginUser.password,
+        isDonor: false
       },
       {
         success: function(user) {

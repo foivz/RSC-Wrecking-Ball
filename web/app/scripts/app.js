@@ -8,8 +8,14 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize'
-  ]).run(['$rootScope', 'api', function ($rootScope, api){
+  ]).run(['$rootScope', 'api', '$location', function ($rootScope, api, $location){
     Parse.initialize('Qz1N1B4aBwzmiszChrGKU37QalVXzZ8iew6hV2oH', 'nlsxXbzBGRIaZ7n2rouuK5dNQahzwjbbnaJQSPEj');
+
+    $rootScope.changeView = function(view) {
+      $location.path(view);
+    };
+
+    $rootScope.currentUser = undefined;
 
     // loading languages
     api.getLocalize('hr').then(function(response) {
