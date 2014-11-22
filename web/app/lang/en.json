@@ -11,6 +11,8 @@
   "username": "Username",
   "password": "Password",
   "national": "National",
+  "bloodType": "Blood type",
+  "city": "City",
   "institutionName": "Institution name",
   "removeInstitution": "Remove institution",
   "editInstitution": "Edit institution",

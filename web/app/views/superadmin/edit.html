@@ -1,10 +1,9 @@
-<div ng-show="formShow" class="data-form">
+<div class="data-form">
   <form  accept-charset="utf-8">
-    <input class="form-control input-clear" type="text" ng-model="institution.username" placeholder="{{lang.name}}">
-    <input class="form-control input-clear" type="text" ng-model="loginUser.password" placeholder="{{lang.location}}">
-    <input class="form-control input-clear" type="textarea" ng-model="loginUser.password" placeholder="{{lang.description}}">
+    <input class="form-control input-clear" type="text" ng-model="institution.name" placeholder="{{lang.name}}">
+    <input class="form-control input-clear" type="text" ng-model="institution.city" placeholder="{{lang.city}}">
   </form>
   <div class="edit-btn-container text-right">
-    <a class="btn btn-submit" ng-click="formShow=false">{{lang.updateInstitutionInfo}}</a>
+    <a class="btn btn-submit" ng-click="updateInfo()">{{lang.updateInstitutionInfo}}</a>
   </div>
 </div>

@@ -69,7 +69,7 @@ angular.module('rscwbApp')
       };
 
       $scope.updateInstitution = function() {
-        $scope.changeView('superadmin/edit/:id');
+        $scope.changeView('superadmin/edit/' + this.institution.get('userObjectId'));
         // debugger
         // this.institution.save({
         //   username: 'Trvtko'

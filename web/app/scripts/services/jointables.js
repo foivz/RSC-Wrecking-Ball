@@ -1,4 +1,5 @@
 'use strict';
+/* global Parse */
 
 angular.module('rscwbApp')
   .service('joinTables', ['$q', function ($q) {
@@ -13,7 +14,7 @@ angular.module('rscwbApp')
 
       var fullInstitution = {};
 
-      var returnResult = $q.defer();+
+      var returnResult = $q.defer();
 
       queryUser.get(objectId, {
         success: function(user) {
@@ -34,13 +35,13 @@ angular.module('rscwbApp')
                   console.log(error);
                   returnResult.reject(error);
                 }
-              })
+              });
             },
             error: function(result, error) {
               console.log(error);
               returnResult.reject(error);
             }
-          })
+          });
         },
         error: function(result, error) {
           console.log(error);
