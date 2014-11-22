@@ -1,5 +1,7 @@
 package hr.foi.rsc.lifeline.activities;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -7,11 +9,18 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+
+import org.json.JSONObject;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -38,6 +47,22 @@ public class MainActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
+
+        // push notification received
+        if (getIntent() != null) {
+            try {
+                JSONObject pushData = new JSONObject(getIntent().getStringExtra("com.parse.Data"));
+                String alertText = pushData.optString("alert");
+                String eventId = pushData.optString("eventId");
+                String location = pushData.optString("location");
+                String time = pushData.optString("time");
+                showPushDialog(eventId, location, time);
+            } catch (Exception e) {
+                Log.v("com.parse.ParsePushReceiver",
+                    "Unexpected JSONException when receiving push data: ", e);
+                e.printStackTrace();
+            }
+        }
 
         setSupportActionBar(toolbar);
 
@@ -93,6 +118,24 @@ public class MainActivity extends ActionBarActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showPushDialog(final String eventId, String location, String time) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.app_name);
+        String message = String.format(getString(R.string.event_call_question), location, time);
+        builder.setMessage(Html.fromHtml(message));
+        builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ParseObject attendee = new ParseObject("Attendees");
+                attendee.put("eventId", eventId);
+                attendee.put("userId", ParseUser.getCurrentUser().getObjectId());
+                attendee.saveInBackground();
+            }
+        });
+        builder.setNegativeButton(android.R.string.no, null);
+        builder.show();
     }
 
     /**

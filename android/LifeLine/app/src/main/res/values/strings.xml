@@ -23,7 +23,6 @@
     <string name="twitter_login">Twitter login</string>
     <string name="fb_login">Facebook login</string>
     <string name="app_id">830133423676900</string>
-    <string name="title_activity_splash">SplashActivity</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="event_call_question">Will you attend the donation event in %1$s at %2$s? We need you blood type.</string>
 
 </resources>
