@@ -12,8 +12,20 @@
     }
   }
   .navbar {
+    text-align: center;
     ul {
-      list-style: none;
+      display: inline-block;
+      li {
+        display: inline-block;
+      }
+    }
+  }
+  .login-container {
+    text-align: center;
+
+    .login-form {
+      width: 400px;
+      margin: 0 auto;
     }
   }
 }

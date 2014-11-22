@@ -9,7 +9,7 @@
       </div>
       <div class="col-xs-12">
         <div class="navbar">
-          <ul>
+          <ul class="list-unstyled">
             <li>
               <a class="btn btn-primary">Button 1</a>
             </li>
@@ -24,17 +24,19 @@
       </div>
       <div class="col-xs-12">
         <div class="login-container">
-          <div class="login-button">
-            <a ng-click="loginClicked=true" class="btn btn-login">{{lang.login}}</a>
-            <span>Or</span>
-            <a ng-href="#/register" class="link signup-link">{{lang.singup}}</a>
+          <div ng-hide="loginClicked" class="login-button">
+            <a ng-click="loginClicked=true" class="btn btn-primary btn-login">{{lang.login}}</a>
           </div>
           <div ng-show="loginClicked" class="login-form">
-            <form action="login_submit" method="get" accept-charset="utf-8">
-              <label>{{lang.username}}:<input class="form-control" type="text" name="" value=""></label>
-              <label>{{lang.password}}<input class="form-control" type="text" name="" value=""></label>
-              <input class="btn btn-submit" type="submit" name="" value="{{lang.submit}}">
+            <form accept-charset="utf-8">
+              <input class="form-control" type="text" ng-model="loginUser.username" placeholder="{{lang.username}}">
+              <input class="form-control" type="text" ng-model="loginUser.password" placeholder="{{lang.password}}">
+              <input class="btn btn-submit" type="button" ng-click="onRegisterClick()" value="{{lang.submit}}">
             </form>
+          </div>
+          <div class="login-button">
+            <span>Or</span>
+            <a ng-href="#/register" class="link signup-link">{{lang.signup}}</a>
           </div>
         </div>
       </div>
