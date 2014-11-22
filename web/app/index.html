@@ -22,11 +22,15 @@
     <!-- Add your site or application content here -->
     <!-- <div class="container"> -->
     <div class="header">
-      <ul class="nav nav-pills pull-right">
+<!--       <ul class="nav nav-pills pull-right">
         <li><a ng-href="#">Home</a></li>
         <li><a ng-href="#/login">Login</a></li>
-      </ul>
+      </ul> -->
       <h3 class="app-name">{{lang.appName}}</h3>
+      <ul class="nav nav-pills">
+        <li><a ng-href="#">{{lang.home}}</a></li>
+        <li><a ng-href="#/login">{{lang.login}}</a></li>
+      </ul>
     </div>
 
     <div ng-view=""></div>

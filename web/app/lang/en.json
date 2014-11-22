@@ -1,5 +1,8 @@
 {
   "appName": "Lifeline",
+  "home": "Home",
+
+
   "blood": "blood",
   "login": "Login",
   "signup": "Sign up",
