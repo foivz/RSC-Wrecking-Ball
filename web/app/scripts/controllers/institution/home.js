@@ -6,11 +6,11 @@ angular.module('rscwbApp')
       $scope.bloodInternal = [];
       $scope.bloodNational = [];
       //var currentInst = joinTables.join($scope.currentUser.id).then(function(instititution) {
-      var currentInst = joinTables.join("4AiydVM8JP").then(function(instititution) {
+      var currentInst = joinTables.join("4AiydVM8JP").then(function(institution) {
         var values = [];
         var max = 0;
-        for(var i = 0; i < instititution.blood.length; i++) {
-          var att = instititution.blood[i];
+        for(var i = 0; i < institution.blood.length; i++) {
+          var att = institution.blood[i];
           values.push(att.get('value'))
           if(parseInt(att.get('value')) > max) {
             max = parseInt(att.get('value'));
