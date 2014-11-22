@@ -52,6 +52,10 @@ angular
         templateUrl: 'views/superadmin/edit.html',
         controller: 'SuperadminEditCtrl'
       })
+      .when('/superadmin/edit', {
+        templateUrl: 'views/superadmin/edit.html',
+        controller: 'SuperadminEditCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
