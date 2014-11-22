@@ -17,6 +17,15 @@ body {
   padding-bottom: 20px;
 }
 
+.bck-color {
+  height: 500px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  &.red {
+    background-color: #EE4433;
+  }
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
