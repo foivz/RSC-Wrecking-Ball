@@ -30,12 +30,13 @@ public class RegisterPresenterImpl implements RegisterPresenter {
         user.setPassword(password);
         user.setEmail(username);
 
+        user.signUpInBackground(signUpCallback);
     }
 
     private SignUpCallback signUpCallback = new SignUpCallback() {
         @Override
         public void done(ParseException e) {
-            registerView.showProgress();
+            registerView.hideProgress();
 
             if (canceled) {
                 return;
