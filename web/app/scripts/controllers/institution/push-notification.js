@@ -23,11 +23,15 @@ angular.module('rscwbApp')
           success: function(event) {
             console.log('new event created');
 
+            // var queryUserData = new Parse.Query(Parse.User);
+
+            // queryUserData.equalTo();
+
             Parse.Push.send({
-              where: '',
+              // where: queryUserData,
               channels: ['all'],
               data: {
-                  alert: 'Great news!',
+                  alert: 'Dino Great news!',
                   eventId: event.id,
                   time: $scope.notificationInfo.time,
                   location: $scope.notificationInfo.location
