@@ -38,5 +38,7 @@
   "bloodNeeded": "Tipovi krvi:",
   "description": "Opis",
   "emailReset": "Poslan je e-mail s dodatnim uputama.",
+  "youAreDonor": "Samo administrator ima pravo pristupa ovim stranicama.",
+  "years": "Godine",
   "browseDonors": "Pretraži donore"
 }
