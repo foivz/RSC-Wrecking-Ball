@@ -18,13 +18,17 @@ angular
     $rootScope.currentUser = undefined;
 
     // loading languages
-    api.getLocalize('hr').then(function(response) {
-      if (!response || !response.data) {
-        console.log('Loading texts failed.');
-      }
+    $rootScope.loadTexts = function(language) {
+      api.getLocalize(language).then(function(response) {
+        if (!response || !response.data) {
+          console.log('Loading texts failed.');
+        }
 
-      $rootScope.lang = response.data;
-    });
+        $rootScope.lang = response.data;
+      });
+    };
+
+    $rootScope.loadTexts('en');
   }])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
