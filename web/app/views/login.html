@@ -9,7 +9,7 @@
       </div>
       <div class="col-xs-12">
         <div class="login-container">
-          <div class="login-form">
+          <div ng-hide="forgotPass" class="login-form">
             <span ng-show="error.hasError" class="error">{{error.msg}}</span>
             <div class="row">
               <form>
@@ -25,7 +25,24 @@
               </form>
             </div>
           </div>
-          <a ng-click="onForgotPassword()" class="link red">{{lang.forgotPassword}}</a>
+          <div ng-show="forgotPass" class="login-form">
+            <span ng-show="error.hasError" class="error">{{error.msg}}</span>
+            <div class="row">
+              <form>
+                <div class="col-sm-4 col-sm-offset-2">
+                  <input class="form-control input-clear" type="text" ng-model="loginUser.email" placeholder="{{lang.email}}">
+                </div>
+                <div class="col-sm-2">
+                  <input class="btn btn-submit login-submit" type="submit" ng-click="onForgotPassword()" value="{{lang.submit}}">
+                </div>
+                <div class="col-sm-2">
+                  <input class="btn btn-submit login-submit" type="button" ng-click="forgotPass=false" value="{{lang.cancel}}">
+                </div>
+              </form>
+            </div>
+          </div>
+          <a ng-hide="forgotPass" ng-click="forgotPass=true" class="link red">{{lang.forgotPassword}}</a>
+          <span ng-hide="!forgotPass" ng-show="mailSent" class="link">{{lang.emailReset}}</span>
         </div>
       </div>
     </div>

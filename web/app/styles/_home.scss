@@ -6,8 +6,6 @@ $light-grey: #A7A9AC;
 
 .blood-levels-container {
   margin: 20px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   padding-bottom: 10px;
 
   .edit-btn-container {
@@ -45,6 +43,7 @@ $light-grey: #A7A9AC;
       height: 0;
       left: 4px;
       width: 98px;
+      max-height: 115px;
       background: $blood-red;
       transition: height 0.3s;
     }
@@ -78,8 +77,6 @@ $light-grey: #A7A9AC;
 
 .institution-data-container {
   margin: 20px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   padding: 20px;
 }
 

@@ -36,8 +36,10 @@ $light-grey: #A7A9AC;
 .input-clear {
   box-shadow: none;
   border-radius: 0px;
+  transition: all 0.2s;
   &:focus {
     box-shadow: none;
+    border-color: $blood-red;
   }
 }
 a {

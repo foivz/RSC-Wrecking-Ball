@@ -51,4 +51,19 @@ angular.module('rscwbApp')
       });
     };
 
+    $scope.onForgotPassword = function() {
+      Parse.User.requestPasswordReset($scope.loginUser.email, {
+        success: function() {
+          // Password reset request was sent successfully
+          $scope.mailSent = true;
+          $scope.$apply();
+        },
+        error: function(error) {
+          // Show the error message somewhere
+          $scope.error.show(error.message);
+          $scope.$apply();
+        }
+      });
+    }
+
   }]);

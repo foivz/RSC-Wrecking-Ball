@@ -33,5 +33,6 @@
   "name": "Name",
   "location": "Address",
   "bloodNeeded": "Blood types:",
-  "description": "Description"
+  "description": "Description",
+  "emailReset": "An email was sent with further instructions."
 }

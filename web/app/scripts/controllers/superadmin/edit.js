@@ -29,6 +29,8 @@ angular.module('rscwbApp')
             {
               success: function(res) {
                 console.log('institution updated');
+                $scope.changeView('superadmin/home');
+                $scope.$apply();
               },
               error: function(res, error) {
                 console.log(error);
@@ -63,6 +65,8 @@ angular.module('rscwbApp')
             {
               success: function(user) {
                 console.log('institution data added', user);
+                $scope.changeView('superadmin/home');
+                $scope.$apply();
               },
 
               error: function(user, error) {

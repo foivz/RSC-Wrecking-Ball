@@ -5,11 +5,13 @@ angular.module('rscwbApp')
     function ($scope, joinTables) {
       $scope.blood = [];
       $scope.institution = {};
+      var values = [];
+      var max = 0;
 
       //joinTables.join($scope.currentUser.id).then(function(instititution) {
       joinTables.join("4AiydVM8JP").then(function(institution) {
-        var values = [];
-        var max = 0;
+        values = [];
+        max = 0;
 
         console.log
 
@@ -37,6 +39,23 @@ angular.module('rscwbApp')
         console.log(error);
       });
 
+      $scope.onBloodChange = function(b) {
+        if(b.value < 0) {
+          b.value = 0;
+          b.height = 0;
+        }
+        max = 0;
+        values = [];
+        for(var i in $scope.blood) {
+          values.push($scope.blood[i].value)
+          if($scope.blood[i].value > max) {
+            max = $scope.blood[i].value;
+          }
+        }
+        for(var i in values) {
+          $scope.blood[i].height = values[i]/max*115;
+        }
+      };
       $scope.updateBloodValues = function() {
         //joinTables.join($scope.currentUser.id).then(function(instititution) {
         joinTables.join("4AiydVM8JP").then(function(institution) {

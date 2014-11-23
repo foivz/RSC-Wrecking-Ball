@@ -6,7 +6,7 @@ angular.module('rscwbApp')
       $scope.bloodInternal = [];
       $scope.bloodNational = [];
       //var currentInst = joinTables.join($scope.currentUser.id).then(function(instititution) {
-      var currentInst = joinTables.join("4AiydVM8JP").then(function(institution) {
+      joinTables.join("4AiydVM8JP").then(function(institution) {
         var values = [];
         var max = 0;
         for(var i = 0; i < institution.blood.length; i++) {
