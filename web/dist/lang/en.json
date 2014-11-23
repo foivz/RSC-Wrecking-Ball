@@ -39,7 +39,8 @@
   "description": "Description",
   "emailReset": "An email was sent with further instructions.",
   "browseDonors": "Browse donors",
-
-  "years": "Years",
-  "donations": "donations"
+  "youAreDonor": "Only an administrator can access the website.",
+  "years": "years",
+  "donations": "donations",
+  "date": "Date"
 }
