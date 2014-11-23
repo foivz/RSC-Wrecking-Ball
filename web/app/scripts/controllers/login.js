@@ -45,8 +45,12 @@ angular.module('rscwbApp')
 
             if ($rootScope.currentUser.get('type') === 'superadmin') {
               $scope.changeView('superadmin/home');
-            } else {
+            } else if ($rootScope.currentUser.get('type') === 'admin') {
               $scope.changeView('institution/home');
+            } else {
+              Parse.User.logOut();
+              $scope.error.show($scope.lang.youAreDonor);
+              $scope.$apply();
             }
 
             $scope.$apply();
