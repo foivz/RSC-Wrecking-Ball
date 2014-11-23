@@ -25,5 +25,4 @@ debugger
       }, function(error) {
         console.log(error);
       });
-
     }]);
