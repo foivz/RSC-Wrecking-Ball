@@ -95,7 +95,8 @@ public class ProfileFragment extends BaseFragment implements ProfileView {
             profilePresenter.saveData(address, additional);
         } else {
             if (validate(name, surname)) {
-                profilePresenter.saveData(name, surname, address, address, bloodType, sex, rhType);
+                profilePresenter
+                    .saveData(name, surname, address, bloodType, sex, additional, rhType);
             }
         }
     }
