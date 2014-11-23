@@ -31,10 +31,12 @@
       <div class="container">
         <a ng-href="#/institution/home"class="app-name"></a>
         <ul class="nav nav-pills">
+        <!-- ng-show="currentUser && currentUser.get('type') !== 'superadmin'"  -->
           <li><a ng-href="#/institution/home">{{lang.home}}</a></li>
           <li><a ng-href="#/institution/info">{{lang.manageInfo}}</a></li>
           <li><a ng-href="#/login">{{lang.login}}</a></li>
           <li><a ng-href="#/institution/push-notification">{{lang.pushNotification}}</a></li>
+          <li><a ng-href="#/institution/browse-donors">{{lang.browseDonors}}</a></li>
         </ul>
         </div>
         <div class="login-info">
@@ -105,6 +107,7 @@
         <script src="scripts/services/jointables.js"></script>
         <script src="scripts/controllers/superadmin/edit.js"></script>
         <script src="scripts/controllers/institution/push-notification.js"></script>
+        <script src="scripts/controllers/institution/browse-donors.js"></script>
         <!-- endbuild -->
 </body>
 </html>

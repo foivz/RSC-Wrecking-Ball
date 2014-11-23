@@ -33,5 +33,6 @@
   "name": "Name",
   "location": "Address",
   "bloodNeeded": "Blood types:",
+  "browseDonors": "Browse donors",
   "description": "Description"
 }

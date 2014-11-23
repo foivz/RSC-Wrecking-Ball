@@ -60,6 +60,10 @@ angular
         templateUrl: 'views/institution/push-notification.html',
         controller: 'InstitutionPushNotificationCtrl'
       })
+      .when('/institution/browse-donors', {
+        templateUrl: 'views/institution/browse-donors.html',
+        controller: 'InstitutionBrowseDonorsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

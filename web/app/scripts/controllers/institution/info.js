@@ -7,22 +7,19 @@ angular.module('rscwbApp')
       $scope.institution = {};
 
       //joinTables.join($scope.currentUser.id).then(function(instititution) {
-      joinTables.join("4AiydVM8JP").then(function(institution) {
+      joinTables.join('4AiydVM8JP').then(function(institution) {
         var values = [];
         var max = 0;
-
-        console.log
-
         $scope.institution = {
           name: institution.institution.get('name'),
           location: institution.institution.get('city'),
           //description: institution.institution.get('name');
-        }
+        };
 
         for(var i = 0; i < institution.blood.length; i++) {
           var att = institution.blood[i];
 
-          values.push(att.get('value'))
+          values.push(att.get('value'));
           if(parseInt(att.get('value')) > max) {
             max = parseInt(att.get('value'));
           }
@@ -45,30 +42,31 @@ angular.module('rscwbApp')
               value: $scope.blood[i].value + ''
             }, {
               succes: function(result) {
-                console.log("updated blood values", result)
+                console.log('updated blood values', result);
               },
               error: function(result, error) {
                 console.log(error);
               }
-            })
+            });
           }
         });
-      }
+      };
+
       $scope.updateInstitution = function() {
         //joinTables.join($scope.currentUser.id).then(function(instititution) {
-        joinTables.join("4AiydVM8JP").then(function(institution) {
+        joinTables.join('4AiydVM8JP').then(function(institution) {
           institution.institution.save({
             name: $scope.institution.name,
             city: $scope.institution.location,
             //description: $scope.institution.description
           }, {
             succes: function(result) {
-              console.log("updated blood values", result)
+              console.log('updated blood values', result);
             },
             error: function(result, error) {
               console.log(error);
             }
-          })
+          });
         });
-      }
+      };
   }]);

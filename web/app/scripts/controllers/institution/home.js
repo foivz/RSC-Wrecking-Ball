@@ -11,7 +11,7 @@ angular.module('rscwbApp')
         var max = 0;
         for(var i = 0; i < institution.blood.length; i++) {
           var att = institution.blood[i];
-          values.push(att.get('value'))
+          values.push(att.get('value'));
           if(parseInt(att.get('value')) > max) {
             max = parseInt(att.get('value'));
           }
@@ -22,6 +22,6 @@ angular.module('rscwbApp')
         }
       }, function(error) {
         console.log(error);
-      })
+      });
 
     }]);
