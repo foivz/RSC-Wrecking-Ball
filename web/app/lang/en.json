@@ -14,7 +14,7 @@
   "national": "National",
   "bloodType": "Blood type",
   "city": "City",
-  "eventName": "eventName",
+  "eventName": "Event name",
   "pushNotification": "Push notification",
   "eventTime": "Event time",
   "eventLocation": "Event location",
@@ -31,10 +31,12 @@
   "updateBloodValues": "Update blood values",
   "pushNotification": "Send push notification",
   "name": "Name",
+  "surname": "Surame",
+  "numberOfDonations": "Number of donations",
+  "addDonation": "Add donation",
   "location": "Address",
   "bloodNeeded": "Blood types:",
   "description": "Description",
   "emailReset": "An email was sent with further instructions.",
-  "browseDonors": "Browse donors",
-  "description": "Description"
+  "browseDonors": "Browse donors"
 }
