@@ -27,6 +27,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import hr.foi.rsc.lifeline.R;
 import hr.foi.rsc.lifeline.fragments.ProfileFragment;
+import hr.foi.rsc.lifeline.fragments.ProfileOverviewFragment;
 
 public class MainActivity extends ActionBarActivity
     implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -94,13 +95,16 @@ public class MainActivity extends ActionBarActivity
             menuItem = mNavigationDrawerFragment.getItem(position);
         }
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
         if (menuItem != null) {
             switch (menuItem.getTitleResId()) {
                 case R.string.menu_home:
-
+                    fragmentManager.beginTransaction()
+                        .replace(R.id.container, new ProfileOverviewFragment())
+                        .commit();
                     break;
                 case R.string.menu_profile:
-                    FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction()
                         .replace(R.id.container, new ProfileFragment())
                         .commit();
@@ -111,7 +115,6 @@ public class MainActivity extends ActionBarActivity
             }
         } else {
             // update the main content by replacing fragments
-            FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                 .commit();

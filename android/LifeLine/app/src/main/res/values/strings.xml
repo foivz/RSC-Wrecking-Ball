@@ -41,23 +41,26 @@
         <item>M</item>
         <item>F</item>
     </string-array>
-
     <string-array name="rh">
         <item>+</item>
         <item>-</item>
     </string-array>
-
     <string-array name="blood_type">
         <item>0</item>
         <item>A</item>
         <item>B</item>
         <item>AB</item>
     </string-array>
-
     <string-array name="languages">
         <item>en</item>
         <item>de</item>
         <item>hr</item>
     </string-array>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="donated_liters">DONATED LITERS</string>
+    <string name="days_next_donation">DAYS TO NEXT DONATION</string>
+    <string name="current_achievements">ACHIEVEMENTS YOU CURRENTLY HAVE</string>
+    <string name="liters_to_free_ticket">LITERS TO FREE TRAM TICKET</string>
 
 </resources>
