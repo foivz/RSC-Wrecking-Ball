@@ -4,6 +4,8 @@
 angular.module('rscwbApp')
   .controller('LoginCtrl', ['$rootScope', '$scope', '$cookieStore',
     function ($rootScope, $scope, $cookieStore) {
+      $scope.checkUser();
+
       $scope.loginClicked = false;
       $scope.registerClicked = false;
       $scope.loginUser = {};
@@ -25,7 +27,13 @@ angular.module('rscwbApp')
             console.log('user logged in', user);
             $rootScope.currentUser = Parse.User.current();
             $cookieStore.put('currentUser', angular.toJson(Parse.User.current()));
-            $scope.changeView('/');
+
+            if ($rootScope.currentUser.get('type') === 'superadmin') {
+              $scope.changeView('superadmin/home');
+            } else {
+              $scope.changeView('institution/home');
+            }
+
             $scope.$apply();
           },
           error: function(user, error) {
