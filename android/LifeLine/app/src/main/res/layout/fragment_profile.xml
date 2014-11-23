@@ -125,6 +125,7 @@
             style="@style/TextField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:singleLine="false"
             android:minLines="3"
             android:maxLines="5"
             android:hint="@string/additional_data" />

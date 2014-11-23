@@ -22,6 +22,7 @@
     <style name="TextField">
         <item name="android:textColorHint">@color/gray</item>
         <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:singleLine">true</item>
     </style>
 
     <style name="RedButton">
@@ -31,6 +32,12 @@
 
     <style name="RedText">
         <item name="android:textColor">@color/primary_dark</item>
+    </style>
+
+    <style name="Achievement">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">0.5</item>
     </style>
 
 </resources>

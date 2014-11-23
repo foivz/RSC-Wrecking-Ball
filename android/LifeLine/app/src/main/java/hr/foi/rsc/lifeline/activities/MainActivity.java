@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -12,9 +11,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.parse.ParseObject;
 import com.parse.ParseUser;
@@ -24,6 +20,7 @@ import org.json.JSONObject;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import hr.foi.rsc.lifeline.R;
+import hr.foi.rsc.lifeline.fragments.AchievementsFragment;
 import hr.foi.rsc.lifeline.fragments.ProfileFragment;
 import hr.foi.rsc.lifeline.fragments.ProfileOverviewFragment;
 
@@ -78,7 +75,7 @@ public class MainActivity extends ActionBarActivity
             R.id.navigation_drawer,
             (DrawerLayout) findViewById(R.id.drawer_layout));
 
-        if(savedInstanceState == null) {
+        if (savedInstanceState == null) {
             if (ParseUser.getCurrentUser().isNew()) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
@@ -110,6 +107,11 @@ public class MainActivity extends ActionBarActivity
                 case R.string.menu_profile:
                     fragmentManager.beginTransaction()
                         .replace(R.id.container, new ProfileFragment())
+                        .commit();
+                    break;
+                case R.string.menu_achievements:
+                    fragmentManager.beginTransaction()
+                        .replace(R.id.container, new AchievementsFragment())
                         .commit();
                     break;
                 case R.string.menu_logout:

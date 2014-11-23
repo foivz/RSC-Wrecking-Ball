@@ -100,8 +100,8 @@ public class NavigationDrawerFragment extends Fragment {
             new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_home, R.drawable.ic_home),
             new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_profile,
                 R.drawable.ic_profile_overview),
-            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_institutions,
-                R.drawable.ic_institutions),
+            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_achievements,
+                R.drawable.ic_menu_achievements),
 //            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_settings, R.drawable.ic_settings),
             new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_logout, R.drawable.ic_logout),
         });
