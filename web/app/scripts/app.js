@@ -43,7 +43,7 @@ angular
     $rootScope.logOut = function() {
       console.log('odjava');
       $cookieStore.remove('currentUser');
-      // $rootScope.changeView('login');
+      $rootScope.changeView('login');
     };
   }])
   .config(['$routeProvider', function ($routeProvider) {
