@@ -4,7 +4,7 @@ angular.module('rscwbApp')
   .controller('InstitutionHomeCtrl', ['$scope','joinTables',
     function ($scope, joinTables) {
       $scope.checkUser();
-debugger
+
       $scope.bloodInternal = [];
       $scope.bloodNational = [];
       //var currentInst = joinTables.join($scope.currentUser.id).then(function(instititution) {
