@@ -101,10 +101,11 @@ public class NavigationDrawerFragment extends Fragment {
 
         menuAdapter = new MenuAdapter(getActivity(), 0, new hr.foi.rsc.lifeline.models.MenuItem[]{
             new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_home, R.drawable.ic_home),
-            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_profile, R.drawable.ic_profile_overview),
+            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_profile,
+                R.drawable.ic_profile_overview),
             new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_institutions,
                 R.drawable.ic_institutions),
-            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_settings, R.drawable.ic_settings),
+//            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_settings, R.drawable.ic_settings),
             new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_logout, R.drawable.ic_logout),
         });
 

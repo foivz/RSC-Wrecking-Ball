@@ -36,12 +36,8 @@ public class ProfilePresenterImpl implements ProfilePresenter {
                 parseObject.put(User.BLOOD_TYPE, bloodType + rhType);
                 parseObject.put(User.SEX, sex);
                 parseObject.put(User.ADDITIONAL, additional);
-                parseObject.saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        profileView.hideProgress();
-                    }
-                });
+                parseObject.saveInBackground();
+                profileView.hideProgress();
             }
         });
     }
@@ -54,12 +50,8 @@ public class ProfilePresenterImpl implements ProfilePresenter {
             public void done(ParseObject parseObject, ParseException e) {
                 parseObject.put(User.ADDRESS, address);
                 parseObject.put(User.ADDITIONAL, additional);
-                parseObject.saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        profileView.hideProgress();
-                    }
-                });
+                parseObject.saveInBackground();
+                profileView.hideProgress();
             }
         });
     }
