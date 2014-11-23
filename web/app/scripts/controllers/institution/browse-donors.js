@@ -26,15 +26,23 @@ angular.module('rscwbApp')
                   queryDonation.find({
                     success: function(donations) {
                       var achievement = 0;
-                      if(donations.length > 0) {
-                        achievement = 1;
-                      } else if(donations.length > 4){
-                        achievement = 5;
-                      } else if(donations.length > 9){
-                        achievement = 10;
-                      } else if(donations.length > 14){
+
+                      if(donations.length > 14) {
                         achievement = 15;
+                      } else {
+                        if(donations.length > 9){
+                          achievement = 10;
+                        } else {
+                          if(donations.length > 4){
+                            achievement = 5;
+                          } else {
+                            if(donations.length > 0){
+                              achievement = 1;
+                            }
+                          }
+                        }
                       }
+                      console.log(achievement);
                       $scope.donors.push({
                         userData: response.userData[0],
                         numberOfDonations: donations.length,
