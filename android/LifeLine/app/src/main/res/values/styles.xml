@@ -14,10 +14,30 @@
         <item name="android:windowBackground">@color/primary</item>
     </style>
 
-
     <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
         <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="TextField">
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="RedButton">
+        <item name="android:background">@drawable/red_button_bg</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="RedText">
+        <item name="android:textColor">@color/primary_dark</item>
+    </style>
+
+    <style name="Achievement">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">0.5</item>
     </style>
 
 </resources>

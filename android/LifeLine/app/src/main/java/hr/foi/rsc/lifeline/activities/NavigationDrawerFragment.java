@@ -81,9 +81,6 @@ public class NavigationDrawerFragment extends Fragment {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
             mFromSavedInstanceState = true;
         }
-
-        // Select either the default item (0) or the last selected item.
-        selectItem(mCurrentSelectedPosition);
     }
 
     @Override
@@ -103,14 +100,17 @@ public class NavigationDrawerFragment extends Fragment {
             new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_home, R.drawable.ic_home),
             new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_profile,
                 R.drawable.ic_profile_overview),
-            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_institutions,
-                R.drawable.ic_institutions),
+            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_achievements,
+                R.drawable.ic_menu_achievements),
 //            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_settings, R.drawable.ic_settings),
             new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_logout, R.drawable.ic_logout),
         });
 
         mDrawerListView.setAdapter(menuAdapter);
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
+
+        // Select either the default item (0) or the last selected item.
+        selectItem(mCurrentSelectedPosition);
     }
 
     @Override
