@@ -4,6 +4,7 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+import hr.foi.rsc.lifeline.models.User;
 import hr.foi.rsc.lifeline.mvp.presenters.RegisterPresenter;
 import hr.foi.rsc.lifeline.mvp.views.RegisterView;
 
@@ -29,6 +30,7 @@ public class RegisterPresenterImpl implements RegisterPresenter {
         user.setUsername(username);
         user.setPassword(password);
         user.setEmail(username);
+        user.put(User.TYPE, User.DONOR);
 
         user.signUpInBackground(signUpCallback);
     }

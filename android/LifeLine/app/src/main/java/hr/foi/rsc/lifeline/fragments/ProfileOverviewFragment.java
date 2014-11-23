@@ -1,18 +1,15 @@
 package hr.foi.rsc.lifeline.fragments;
 
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 import hr.foi.rsc.lifeline.R;
+import hr.foi.rsc.lifeline.mvp.views.ProfileOverviewView;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class ProfileOverviewFragment extends BaseFragment {
+public class ProfileOverviewFragment extends BaseFragment implements ProfileOverviewView {
 
     public ProfileOverviewFragment() {
         // Required empty public constructor
@@ -26,4 +23,24 @@ public class ProfileOverviewFragment extends BaseFragment {
         return view;
     }
 
+    @Override
+    public void showData(String liters, String daysToNext, String achievements,
+                         String litersToFreeTicket) {
+
+    }
+
+    @Override
+    public void showProgress() {
+        showProgressBar();
+    }
+
+    @Override
+    public void hideProgress() {
+        hideProgressBar();
+    }
+
+    @Override
+    public void showError(String message) {
+        showDialog(message);
+    }
 }

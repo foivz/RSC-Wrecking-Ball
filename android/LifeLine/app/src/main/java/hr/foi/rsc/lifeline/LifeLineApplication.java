@@ -42,7 +42,7 @@ public class LifeLineApplication extends Application {
         });
     }
 
-    public LifeLineApplication getInstance() {
+    public static LifeLineApplication getInstance() {
         return instance;
     }
 }

@@ -62,5 +62,6 @@
     <string name="days_next_donation">DAYS TO NEXT DONATION</string>
     <string name="current_achievements">ACHIEVEMENTS YOU CURRENTLY HAVE</string>
     <string name="liters_to_free_ticket">LITERS TO FREE TRAM TICKET</string>
+    <string name="only_donors">Only donors can use this app.</string>
 
 </resources>

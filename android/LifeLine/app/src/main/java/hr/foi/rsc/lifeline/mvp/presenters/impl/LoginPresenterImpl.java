@@ -9,6 +9,9 @@ import com.parse.ParseTwitterUtils;
 import com.parse.ParseUser;
 import com.parse.RequestPasswordResetCallback;
 
+import hr.foi.rsc.lifeline.LifeLineApplication;
+import hr.foi.rsc.lifeline.R;
+import hr.foi.rsc.lifeline.models.User;
 import hr.foi.rsc.lifeline.mvp.presenters.LoginPresenter;
 import hr.foi.rsc.lifeline.mvp.views.LoginView;
 
@@ -71,7 +74,17 @@ public class LoginPresenterImpl implements LoginPresenter {
             loginView.hideProgress();
 
             if (parseUser != null) {
-                loginView.navigateToHome();
+                if(!parseUser.containsKey(User.TYPE)) {
+                    parseUser.put(User.TYPE, User.DONOR);
+                    parseUser.saveInBackground();
+                }
+                if (parseUser.getString(User.TYPE).equals(User.DONOR)) {
+                    loginView.navigateToHome();
+                } else {
+                    loginView.showError(LifeLineApplication.getInstance().getString(
+                        R.string.only_donors));
+                    ParseUser.logOut();
+                }
             } else {
                 if (e != null && e.getMessage() != null) {
                     loginView.showError(e.getMessage());
