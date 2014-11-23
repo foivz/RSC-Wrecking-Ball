@@ -4,6 +4,8 @@
 angular.module('rscwbApp')
   .controller('InstitutionBrowseDonorsCtrl', ['$scope', 'joinTables',
     function ($scope, joinTables) {
+      $scope.checkUser();
+
       var getDonors = function() {
         var Users = Parse.Object.extend('User');
         var query = new Parse.Query(Users);

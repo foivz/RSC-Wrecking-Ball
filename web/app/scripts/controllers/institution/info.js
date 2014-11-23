@@ -3,6 +3,8 @@
 angular.module('rscwbApp')
   .controller('InstitutionInfoCtrl', ['$scope','joinTables',
     function ($scope, joinTables) {
+      $scope.checkUser();
+
       $scope.blood = [];
       $scope.institution = {};
       var values = [];

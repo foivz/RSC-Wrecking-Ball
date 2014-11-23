@@ -4,6 +4,8 @@
 angular.module('rscwbApp')
   .controller('SuperadminEditCtrl', ['$scope', '$routeParams', 'joinTables',
     function ($scope, $routeParams, joinTables) {
+      $scope.checkUser();
+
       $scope.institutionID = $routeParams.id;
 
       $scope.institution = {};

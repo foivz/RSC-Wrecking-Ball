@@ -4,6 +4,8 @@
 angular.module('rscwbApp')
   .controller('InstitutionPushNotificationCtrl', ['$scope',
     function ($scope) {
+      $scope.checkUser();
+
       $scope.notificationInfo = {};
 
       var select2 = $('#bloodtypes').select2();

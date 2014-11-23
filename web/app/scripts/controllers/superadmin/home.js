@@ -4,6 +4,8 @@
 angular.module('rscwbApp')
   .controller('SuperadminHomeCtrl', ['$scope',
     function ($scope) {
+      $scope.checkUser();
+
       var getInstitutions = function() {
         var Institutions = Parse.Object.extend('User');
         var InstitutionData = Parse.Object.extend('InstitutionData');

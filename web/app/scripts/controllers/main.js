@@ -4,6 +4,8 @@
 angular.module('rscwbApp')
   .controller('MainCtrl', ['$scope',
     function ($scope) {
+      $scope.checkUser();
+
       $scope.userData = {};
 
       $scope.onAddUserClick = function() {
