@@ -18,6 +18,10 @@ angular.module('rscwbApp')
       {
         name: 'Bosanski',
         value: 'bih'
+      },
+      {
+        name: 'German',
+        value: 'ger'
       }];
       $scope.language = $scope.languages[0];
 
