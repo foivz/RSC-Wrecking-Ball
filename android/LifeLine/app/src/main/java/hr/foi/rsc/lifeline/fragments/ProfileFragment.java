@@ -8,12 +8,16 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 import hr.foi.rsc.lifeline.R;
+import hr.foi.rsc.lifeline.models.User;
 import hr.foi.rsc.lifeline.mvp.presenters.ProfilePresenter;
 import hr.foi.rsc.lifeline.mvp.presenters.impl.ProfilePresenterImpl;
 import hr.foi.rsc.lifeline.mvp.views.ProfileView;
@@ -74,6 +78,16 @@ public class ProfileFragment extends BaseFragment implements ProfileView {
             layoutSex.setVisibility(View.GONE);
             layoutBloodType.setVisibility(View.GONE);
             layoutRh.setVisibility(View.GONE);
+
+            showProgress();
+            User.getInstance().getUserData(new GetCallback<ParseObject>() {
+                @Override
+                public void done(final ParseObject parseObject, ParseException e) {
+                    inputAddress.setText(parseObject.getString(User.ADDRESS));
+                    inputAdditional.setText(parseObject.getString(User.ADDITIONAL));
+                    hideProgress();
+                }
+            });
         }
 
         profilePresenter = new ProfilePresenterImpl(this);

@@ -1,5 +1,8 @@
 package hr.foi.rsc.lifeline.mvp.presenters.impl;
 
+import android.os.Handler;
+import android.os.Looper;
+
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -17,6 +20,8 @@ public class ProfilePresenterImpl implements ProfilePresenter {
     private boolean canceled;
 
     private ProfileView profileView;
+
+    private Handler mainHandler = new Handler(Looper.getMainLooper());
 
     public ProfilePresenterImpl(ProfileView profileView) {
         this.profileView = profileView;

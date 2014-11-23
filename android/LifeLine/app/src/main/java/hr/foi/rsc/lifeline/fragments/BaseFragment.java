@@ -23,8 +23,8 @@ public class BaseFragment extends Fragment {
     }
 
     public void hideProgressBar() {
-        if (progressDialog != null && !progressDialog.isShowing() && !getActivity().isFinishing()) {
-            progressDialog.show();
+        if (progressDialog != null && progressDialog.isShowing() && !getActivity().isFinishing()) {
+            progressDialog.hide();
         }
     }
 
