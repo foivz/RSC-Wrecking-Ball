@@ -78,12 +78,15 @@ public class MainActivity extends ActionBarActivity
             R.id.navigation_drawer,
             (DrawerLayout) findViewById(R.id.drawer_layout));
 
-        if (ParseUser.getCurrentUser().isNew()) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction()
-                .replace(R.id.container, new ProfileFragment())
-                .commit();
+        if(savedInstanceState == null) {
+            if (ParseUser.getCurrentUser().isNew()) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                    .replace(R.id.container, new ProfileFragment())
+                    .addToBackStack(null).commit();
+            }
         }
+
     }
 
     @Override

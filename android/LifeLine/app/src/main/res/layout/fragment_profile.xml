@@ -12,16 +12,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <EditText
             android:id="@+id/input_name"
+            style="@style/TextField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/name" />
 
         <EditText
             android:id="@+id/input_surname"
+            style="@style/TextField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/surname" />
@@ -34,6 +37,7 @@
             android:paddingBottom="5dp">
 
             <TextView
+                style="@style/RedText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@+id/spinner_sex"
@@ -55,6 +59,7 @@
 
         <EditText
             android:id="@+id/input_address"
+            style="@style/TextField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/street_address" />
@@ -67,6 +72,7 @@
             android:paddingBottom="5dp">
 
             <TextView
+                style="@style/RedText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@+id/spinner_blood_type"
@@ -94,6 +100,7 @@
             android:paddingBottom="5dp">
 
             <TextView
+                style="@style/RedText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@+id/spinner_rh"
@@ -115,6 +122,7 @@
 
         <EditText
             android:id="@+id/input_additional"
+            style="@style/TextField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minLines="3"
@@ -123,8 +131,10 @@
 
         <Button
             android:id="@+id/button_save"
-            android:layout_width="match_parent"
+            style="@style/RedButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/save" />
+            android:layout_marginTop="20dp"
+            android:text="@string/continue_" />
     </LinearLayout>
 </ScrollView>
