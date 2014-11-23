@@ -53,9 +53,9 @@
                 <div class="bck" style="height: {{b.height}}px;"></div>
                 <div class="type">{{b.type}}<span class="super">{{b.super}}</span></div>
               </div>
-              <div class="value">{{b.value}}<span class="unit">L</span></div>
+              <div class="value">{{b.value / 2}}<span class="unit">L</span></div>
               <div class="form">
-                <input type="number" ng-change="onBloodChange(b)" class="form-control input-clear" ng-model="b.value" placeholder="{{b.value}}">
+                <input type="number" ng-change="onBloodChange(b)" class="form-control input-clear" ng-model="b.newvalue" placeholder="{{b.value/2}}">
               </div>
             </div>
           </div>

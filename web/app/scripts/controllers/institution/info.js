@@ -28,7 +28,7 @@ angular.module('rscwbApp')
             max = parseInt(att.get('value'));
           }
 
-          $scope.blood[i] = { value: parseInt(att.get('value')), type: att.get('bloodType').slice(0, -1), super: att.get('bloodType').slice(-1) };
+          $scope.blood[i] = { value: parseInt(att.get('value')), newvalue: parseInt(att.get('value'))/2, type: att.get('bloodType').slice(0, -1), super: att.get('bloodType').slice(-1) };
         }
 
         for(var i in values) {
@@ -39,13 +39,14 @@ angular.module('rscwbApp')
       });
 
       $scope.onBloodChange = function(b) {
-        if(b.value < 0) {
-          b.value = 0;
+        if(b.newvalue < 0) {
+          b.newvalue = 0;
           b.height = 0;
         }
         max = 0;
         values = [];
         for(var i in $scope.blood) {
+          $scope.blood[i].value = $scope.blood[i].newvalue * 2;
           values.push($scope.blood[i].value);
           if($scope.blood[i].value > max) {
             max = $scope.blood[i].value;
@@ -58,6 +59,7 @@ angular.module('rscwbApp')
       $scope.updateBloodValues = function() {
         joinTables.join($scope.currentUser.id).then(function(institution) {
           for(var i = 0; i < institution.blood.length; i++) {
+            $scope.blood[i].value = $scope.blood[i].newvalue*2;
             institution.blood[i].save({
               value: $scope.blood[i].value + ''
             }, {
