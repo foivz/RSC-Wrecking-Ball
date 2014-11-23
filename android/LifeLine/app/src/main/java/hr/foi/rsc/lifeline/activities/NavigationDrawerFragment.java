@@ -1,25 +1,22 @@
 package hr.foi.rsc.lifeline.activities;
 
-import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import butterknife.ButterKnife;
@@ -105,7 +102,8 @@ public class NavigationDrawerFragment extends Fragment {
         menuAdapter = new MenuAdapter(getActivity(), 0, new hr.foi.rsc.lifeline.models.MenuItem[]{
             new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_home, R.drawable.ic_launcher),
             new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_profile, R.drawable.ic_launcher),
-            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_institutions, R.drawable.ic_launcher),
+            new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_institutions,
+                R.drawable.ic_launcher),
             new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_settings, R.drawable.ic_launcher),
             new hr.foi.rsc.lifeline.models.MenuItem(R.string.menu_logout, R.drawable.ic_launcher),
         });
@@ -202,6 +200,15 @@ public class NavigationDrawerFragment extends Fragment {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     private void selectItem(int position) {
         mCurrentSelectedPosition = position;
         if (mDrawerListView != null) {
@@ -244,28 +251,8 @@ public class NavigationDrawerFragment extends Fragment {
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        // If the drawer is open, show the global app actions in the action bar. See also
-        // showGlobalContextActionBar, which controls the top-left area of the action bar.
-        if (mDrawerLayout != null && isDrawerOpen()) {
-            inflater.inflate(R.menu.global, menu);
-            showGlobalContextActionBar();
-        }
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     public hr.foi.rsc.lifeline.models.MenuItem getItem(int position) {
-        if(menuAdapter != null) {
+        if (menuAdapter != null) {
             return menuAdapter.getItem(position);
         }
 

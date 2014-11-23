@@ -26,6 +26,7 @@ import org.json.JSONObject;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import hr.foi.rsc.lifeline.R;
+import hr.foi.rsc.lifeline.fragments.ProfileFragment;
 
 public class MainActivity extends ActionBarActivity
     implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -75,6 +76,13 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
             R.id.navigation_drawer,
             (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        if (ParseUser.getCurrentUser().isNew()) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                .replace(R.id.container, new ProfileFragment())
+                .commit();
+        }
     }
 
     @Override
@@ -92,7 +100,10 @@ public class MainActivity extends ActionBarActivity
 
                     break;
                 case R.string.menu_profile:
-
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction()
+                        .replace(R.id.container, new ProfileFragment())
+                        .commit();
                     break;
                 case R.string.menu_logout:
                     showLogoutConfirmation();
@@ -128,34 +139,6 @@ public class MainActivity extends ActionBarActivity
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle(mTitle);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        if (!mNavigationDrawerFragment.isDrawerOpen()) {
-            // Only show items in the action bar relevant to this screen
-            // if the drawer is not showing. Otherwise, let the drawer
-            // decide what to show in the action bar.
-            getMenuInflater().inflate(R.menu.main, menu);
-            restoreActionBar();
-            return true;
-        }
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     private void showPushDialog(final String eventId, String location, String time) {

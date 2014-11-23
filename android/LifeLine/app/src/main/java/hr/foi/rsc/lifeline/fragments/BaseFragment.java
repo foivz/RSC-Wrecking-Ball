@@ -1,8 +1,8 @@
 package hr.foi.rsc.lifeline.fragments;
 
 import android.app.AlertDialog;
-import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.support.v4.app.Fragment;
 
 import butterknife.ButterKnife;
 import hr.foi.rsc.lifeline.R;

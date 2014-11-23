@@ -25,5 +25,31 @@
     <string name="app_id">830133423676900</string>
     <string name="event_call_question">Will you attend the donation event in %1$s at %2$s? We need you blood type.</string>
     <string name="confirm_logout">Are you sure you want to log out?</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="street_address">Street and street number</string>
+    <string name="additional_data">Additional data</string>
+    <string name="sex">Sex</string>
+    <string name="rh_factor">Rh Factor</string>
+    <string name="blood_type">Blood Type</string>
+    <string name="save">Save</string>
+    <string name="save_success">Successfully saved</string>
+
+    <string-array name="sex">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="rh">
+        <item>Positive</item>
+        <item>Negative</item>
+    </string-array>
+
+    <string-array name="blood_type">
+        <item>0</item>
+        <item>A</item>
+        <item>B</item>
+        <item>AB</item>
+    </string-array>
 
 </resources>

@@ -33,6 +33,7 @@ public class PushReceiver extends ParsePushBroadcastReceiver {
 
     @Override
     protected void onPushReceive(Context context, Intent intent) {
+        Log.e("Push", "Received");
         if (ParseUser.getCurrentUser() != null) {
             super.onPushReceive(context, intent);
         }
