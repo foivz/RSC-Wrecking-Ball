@@ -7,6 +7,7 @@ import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
 import com.parse.ParseTwitterUtils;
 import com.parse.ParseUser;
+import com.parse.RequestPasswordResetCallback;
 
 import hr.foi.rsc.lifeline.mvp.presenters.LoginPresenter;
 import hr.foi.rsc.lifeline.mvp.views.LoginView;
@@ -42,6 +43,23 @@ public class LoginPresenterImpl implements LoginPresenter {
         canceled = false;
         ParseTwitterUtils.logIn(activity, logInCallback);
     }
+
+    @Override
+    public void resetPassword(String email) {
+        ParseUser.requestPasswordResetInBackground(email, requestPasswordResetCallback);
+    }
+
+    private RequestPasswordResetCallback requestPasswordResetCallback =
+        new RequestPasswordResetCallback() {
+            public void done(ParseException e) {
+                loginView.hideProgress();
+                if (e == null) {
+                    loginView.onPasswordReset();
+                } else {
+                    loginView.showError(e.getMessage());
+                }
+            }
+        };
 
     private LogInCallback logInCallback = new LogInCallback() {
         @Override

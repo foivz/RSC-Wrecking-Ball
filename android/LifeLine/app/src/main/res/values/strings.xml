@@ -34,15 +34,16 @@
     <string name="blood_type">Blood Type</string>
     <string name="save">Save</string>
     <string name="save_success">Successfully saved</string>
+    <string name="password_reset_success">An email with reset instructions was sent to your email address.</string>
 
     <string-array name="sex">
-        <item>Male</item>
-        <item>Female</item>
+        <item>M</item>
+        <item>F</item>
     </string-array>
 
     <string-array name="rh">
-        <item>Positive</item>
-        <item>Negative</item>
+        <item>+</item>
+        <item>-</item>
     </string-array>
 
     <string-array name="blood_type">

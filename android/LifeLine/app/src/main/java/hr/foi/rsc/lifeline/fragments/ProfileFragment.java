@@ -20,20 +20,6 @@ import hr.foi.rsc.lifeline.mvp.views.ProfileView;
 
 public class ProfileFragment extends BaseFragment implements ProfileView {
 
-    public static final String NAME = "name";
-
-    public static final String SURNAME = "surname";
-
-    public static final String ADDRESS = "address";
-
-    public static final String BLOOD_TYPE = "bloodType";
-
-    public static final String SEX = "sex";
-
-    public static final String RH_TYPE = "rhType";
-
-    public static final String ADDITIONAL = "additional";
-
     @InjectView(R.id.input_name)
     EditText inputName;
 

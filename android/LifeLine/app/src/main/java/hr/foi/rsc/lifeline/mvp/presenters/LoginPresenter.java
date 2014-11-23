@@ -12,4 +12,6 @@ public interface LoginPresenter extends BasePresenter {
     public void authenticateUserFb(Activity activity);
 
     public void authenticateUserTwitter(Activity activity);
+
+    public void resetPassword(String email);
 }

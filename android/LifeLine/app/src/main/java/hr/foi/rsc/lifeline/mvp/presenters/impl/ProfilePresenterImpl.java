@@ -1,5 +1,11 @@
 package hr.foi.rsc.lifeline.mvp.presenters.impl;
 
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.SaveCallback;
+
+import hr.foi.rsc.lifeline.models.User;
 import hr.foi.rsc.lifeline.mvp.presenters.ProfilePresenter;
 import hr.foi.rsc.lifeline.mvp.views.ProfileView;
 
@@ -17,20 +23,46 @@ public class ProfilePresenterImpl implements ProfilePresenter {
     }
 
     @Override
-    public void saveData(String name, String surname, String address, String bloodType, String sex,
-                         String additional, String rhType) {
+    public void saveData(final String name, final String surname, final String address,
+                         final String bloodType, final String sex,
+                         final String additional, final String rhType) {
         profileView.showProgress();
-        // TODO
-        profileView.hideProgress();
+        User.getInstance().getUserData(new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject parseObject, ParseException e) {
+                parseObject.put(User.NAME, name);
+                parseObject.put(User.SURNAME, surname);
+                parseObject.put(User.ADDRESS, address);
+                parseObject.put(User.BLOOD_TYPE, bloodType + rhType);
+                parseObject.put(User.SEX, sex);
+                parseObject.put(User.ADDITIONAL, additional);
+                parseObject.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        profileView.hideProgress();
+                    }
+                });
+            }
+        });
     }
 
     @Override
-    public void saveData(String address, String additional) {
+    public void saveData(final String address, final String additional) {
         profileView.showProgress();
-        // TODO
-        profileView.hideProgress();
+        User.getInstance().getUserData(new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject parseObject, ParseException e) {
+                parseObject.put(User.ADDRESS, address);
+                parseObject.put(User.ADDITIONAL, additional);
+                parseObject.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        profileView.hideProgress();
+                    }
+                });
+            }
+        });
     }
-
 
     @Override
     public void cancel() {

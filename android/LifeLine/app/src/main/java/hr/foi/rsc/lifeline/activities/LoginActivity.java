@@ -3,6 +3,7 @@ package hr.foi.rsc.lifeline.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.parse.ParseUser;
 
@@ -59,6 +60,21 @@ public class LoginActivity extends BaseActivity implements LoginView {
         }
     }
 
+    @OnClick(R.id.button_forgot_password)
+    protected void resetPassword() {
+
+        String username = usernameText.getText().toString().trim();
+
+        if (username.isEmpty()) {
+            usernameText.setError(getString(R.string.field_required));
+            usernameText.requestFocus();
+        }
+
+        if (!username.isEmpty()) {
+            loginPresenter.resetPassword(username);
+        }
+    }
+
     @OnLongClick(R.id.image_logo)
     protected boolean fillInloginCredentials() {
         usernameText.setText("test@example.com");
@@ -85,6 +101,11 @@ public class LoginActivity extends BaseActivity implements LoginView {
     public void navigateToHome() {
         startActivity(new Intent(LoginActivity.this, MainActivity.class));
         finish();
+    }
+
+    @Override
+    public void onPasswordReset() {
+        showDialog(getString(R.string.password_reset_success));
     }
 
     @Override

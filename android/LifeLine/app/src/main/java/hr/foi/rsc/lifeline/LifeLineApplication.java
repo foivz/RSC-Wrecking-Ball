@@ -23,6 +23,7 @@ public class LifeLineApplication extends Application {
 
         Parse.setLogLevel(Parse.LOG_LEVEL_VERBOSE);
 
+        Parse.enableLocalDatastore(getApplicationContext());
         Parse.initialize(this, "Qz1N1B4aBwzmiszChrGKU37QalVXzZ8iew6hV2oH",
             "kWAfX9HmPe1HRXojqj8kuPEufx0r9yXFcoCzVdAq");
         ParseTwitterUtils.initialize("GtQtnF894a6USOPRIVZx2HWfv",

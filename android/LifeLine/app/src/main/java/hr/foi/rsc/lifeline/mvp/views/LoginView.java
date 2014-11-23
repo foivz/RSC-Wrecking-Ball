@@ -7,4 +7,5 @@ public interface LoginView extends BaseView {
 
     public void navigateToHome();
 
+    public void onPasswordReset();
 }
