@@ -1,5 +1,4 @@
 'use strict';
-
 /* global Parse */
 
 angular
@@ -45,10 +44,6 @@ angular
   }])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-      // .when('/', {
-      //   templateUrl: 'views/main.html',
-      //   controller: 'MainCtrl'
-      // })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'

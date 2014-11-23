@@ -1,6 +1,7 @@
 'use strict';
 /* global Parse */
 
+// joins tables InstitutionData, InstitutionBlood, UserData and return result
 angular.module('rscwbApp')
   .service('joinTables', ['$q', function ($q) {
     var join = function(objectId) {

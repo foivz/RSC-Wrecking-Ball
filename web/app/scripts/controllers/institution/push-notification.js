@@ -1,5 +1,6 @@
 'use strict';
 /* global Parse */
+/* global $ */
 
 angular.module('rscwbApp')
   .controller('InstitutionPushNotificationCtrl', ['$scope',

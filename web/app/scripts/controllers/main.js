@@ -1,6 +1,8 @@
 'use strict';
 /* global Parse */
 
+// view used for testing purposes
+
 angular.module('rscwbApp')
   .controller('MainCtrl', ['$scope',
     function ($scope) {
@@ -111,7 +113,7 @@ angular.module('rscwbApp')
         currentUserID = $scope.currentUser.id;
 
         var UserDonation = Parse.Object.extend('UserDonation');
-        var donation = new UserDonation;
+        var donation = new UserDonation();
 
         var UserData = Parse.Object.extend('UserData');
         var queryUserData = new Parse.Query(UserData);

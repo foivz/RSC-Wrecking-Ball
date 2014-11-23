@@ -46,7 +46,7 @@ angular.module('rscwbApp')
         max = 0;
         values = [];
         for(var i in $scope.blood) {
-          values.push($scope.blood[i].value)
+          values.push($scope.blood[i].value);
           if($scope.blood[i].value > max) {
             max = $scope.blood[i].value;
           }

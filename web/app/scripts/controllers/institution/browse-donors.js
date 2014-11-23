@@ -70,7 +70,7 @@ angular.module('rscwbApp')
         var currentUserID = $scope.currentUser.id;
 
         var UserDonation = Parse.Object.extend('UserDonation');
-        var donation = new UserDonation;
+        var donation = new UserDonation();
 
         var UserData = Parse.Object.extend('UserData');
         var queryUserData = new Parse.Query(UserData);
@@ -98,7 +98,7 @@ angular.module('rscwbApp')
                       success: function(result) {
                         console.log('donation added');
                         getDonors();
-                        $scope.$apply;
+                        $scope.$apply();
                       },
                       error: function(result, error) {
                         console.log(error);

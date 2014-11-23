@@ -70,7 +70,8 @@ angular.module('rscwbApp')
                 console.log('institution data added', user);
                 for(var i in bloodTypes){
                   var Blood = Parse.Object.extend('InstitutionBlood');
-                  var b = new Blood;
+                  var b = new Blood();
+
                   b.save({
                     bloodType: bloodTypes[i],
                     userObjectId: inst.id,
