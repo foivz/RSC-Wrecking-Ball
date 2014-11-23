@@ -6,6 +6,21 @@ angular.module('rscwbApp')
     function ($rootScope, $scope, $cookieStore) {
       $scope.checkUser();
 
+      $scope.languages = [
+      {
+        name: 'English',
+        value: 'en'
+      },
+      {
+        name: 'Hrvatski',
+        value: 'hr'
+      },
+      {
+        name: 'Bosanski',
+        value: 'bih'
+      }];
+      $scope.language = $scope.languages[0];
+
       $scope.loginClicked = false;
       $scope.registerClicked = false;
       $scope.loginUser = {};
@@ -74,6 +89,10 @@ angular.module('rscwbApp')
           $scope.$apply();
         }
       });
+    };
+
+    $scope.languageChanged = function() {
+      $scope.loadTexts($scope.language.value);
     };
 
   }]);

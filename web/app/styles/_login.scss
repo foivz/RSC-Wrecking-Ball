@@ -96,3 +96,15 @@ $light-grey: #A7A9AC;
     }
   }
 }
+
+.localization-container {
+  select {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90px;
+    color: #FFFFFF;
+    background-color: $blood-red;
+    border: none;
+}
+}
