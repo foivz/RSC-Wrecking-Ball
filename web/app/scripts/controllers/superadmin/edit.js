@@ -44,6 +44,7 @@ angular.module('rscwbApp')
 
       $scope.createInstitution = function() {
         var user = new Parse.User();
+        var bloodTypes = ['0-','0+','A-','A+','B-','B+','AB-','AB+'];
 
         user.signUp({
           username: $scope.institution.username,
@@ -65,8 +66,26 @@ angular.module('rscwbApp')
             {
               success: function(user) {
                 console.log('institution data added', user);
-                $scope.changeView('superadmin/home');
-                $scope.$apply();
+                for(var i in bloodTypes){
+                  var Blood = Parse.Object.extend('InstitutionBlood');
+                  var b = new Blood;
+                  b.save({
+                    bloodType: bloodTypes[i],
+                    userObjectId: inst.id,
+                    value: '0'
+                  },
+                  {
+                    success: function(result) {
+                      console.log('added blood type ' + bloodTypes[i]);
+                    },
+                    error: function(result, error) {
+                      console.log(error);
+                    }
+                  });
+                }
+
+                //$scope.changeView('superadmin/home');
+                //$scope.$apply();
               },
 
               error: function(user, error) {

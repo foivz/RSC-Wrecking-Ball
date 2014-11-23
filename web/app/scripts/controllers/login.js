@@ -64,6 +64,6 @@ angular.module('rscwbApp')
           $scope.$apply();
         }
       });
-    }
+    };
 
   }]);

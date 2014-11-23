@@ -23,5 +23,4 @@ angular.module('rscwbApp')
       }, function(error) {
         console.log(error);
       });
-
     }]);

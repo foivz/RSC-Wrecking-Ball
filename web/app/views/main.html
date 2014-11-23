@@ -37,5 +37,14 @@
     </div>
   </div>
 
+  <div ng-show="currentUser">
+    <h4>Add new donation -tablica UserDonation</h4>
+    <div class="">
+      <input class="form-control input-clear" type="text" ng-model="userData.date" placeholder="Datum">
+      <input class="form-control input-clear" type="text" ng-model="userData.userId" placeholder="userId">
+      <input class="btn btn-submit" type="button" ng-click="onAddDonation()" value="Add institution blood">
+    </div>
+  </div>
+
   <input class="btn btn-submit" type="button" ng-click="makePush()" value="Push">
 </div>
