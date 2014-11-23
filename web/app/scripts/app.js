@@ -8,9 +8,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize'
-  ]).run(['$rootScope', 'api', '$location', '$cookieStore', function ($rootScope, api, $location, $cookieStore) {
+  ]).run(['$rootScope', 'api', '$location', function ($rootScope, api, $location) {
     Parse.initialize('Qz1N1B4aBwzmiszChrGKU37QalVXzZ8iew6hV2oH', 'nlsxXbzBGRIaZ7n2rouuK5dNQahzwjbbnaJQSPEj');
-// debugger
+
     $rootScope.changeView = function(view) {
       $location.path(view);
     };
@@ -31,18 +31,15 @@ angular
     $rootScope.loadTexts('en');
 
     $rootScope.checkUser = function() {
-      if (!$rootScope.currentUser) {
-        if ($cookieStore.get('currentUser')) {
-          $rootScope.currentUser = angular.fromJson($cookieStore.get('currentUser'));
-        } else {
-          $rootScope.changeView('login');
-        }
+      if (Parse.User.current()) {
+        $rootScope.currentUser = Parse.User.current();
+      } else {
+        $rootScope.changeView('login');
       }
     };
 
     $rootScope.logOut = function() {
-      console.log('odjava');
-      $cookieStore.remove('currentUser');
+      Parse.User.logOut();
       $rootScope.changeView('login');
     };
   }])

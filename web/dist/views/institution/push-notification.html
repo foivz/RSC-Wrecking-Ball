@@ -1,8 +1,8 @@
-<div class="container"> <div class="data-form"> <form accept-charset="utf-8"> <div> <div>{{lang.eventName}}</div> <input class="form-control input-clear" type="text" ng-model="notificationInfo.name" placeholder="{{lang.eventName}}"> </div> <div> <div>{{lang.eventLocation}}</div> <input class="form-control input-clear" type="text" ng-model="notificationInfo.location" placeholder="{{lang.eventLocation}}"> </div> <div> <div>{{lang.eventTime}}</div> <input class="form-control input-clear" type="text" ng-model="notificationInfo.time" placeholder="{{lang.eventTime}}"> </div> </form> <!-- <div>
-      <div>{{lang.bloodNeeded}}</div>
-      <select id="bloodtypes" class="select2" multiple ng-model="notificationInfo.bloodTypes">
-        <option value="A+">A+</option>
-        <option value="A-">A-</option>
-        <option value="0+">0+</option>
-      </select>
-    </div> --> <div class="edit-btn-container text-right"> <a class="btn btn-submit" ng-click="pushNotification()">{{lang.pushNotification}}</a> </div> </div> </div>
+<div class="container margintop"> <div class="data-form push-notification"> <div class="row"> <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3"> <form accept-charset="utf-8"> <div> <input class="form-control input-clear" type="text" ng-model="notificationInfo.name" placeholder="{{lang.eventName}}"> </div> <div> <input class="form-control input-clear" type="text" ng-model="notificationInfo.location" placeholder="{{lang.eventLocation}}"> </div> <div> <input class="form-control input-clear" type="text" ng-model="notificationInfo.time" placeholder="{{lang.eventTime}}"> </div> </form> <!-- <div>
+          <div>{{lang.bloodNeeded}}</div>
+          <select id="bloodtypes" class="select2" multiple ng-model="notificationInfo.bloodTypes">
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="0+">0+</option>
+          </select>
+        </div> --> <div class="edit-btn-container text-right"> <a class="btn btn-submit" ng-click="pushNotification()">{{lang.pushNotification}}</a> </div> </div> </div> </div> </div>
