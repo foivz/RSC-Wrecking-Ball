@@ -33,6 +33,9 @@ $light-grey: #A7A9AC;
 .super {
   vertical-align: super;
 }
+.bold {
+  font-weight: bold;
+}
 
 .input-clear {
   box-shadow: none;
@@ -133,6 +136,22 @@ span {
 
     &:hover {
       background-color: $blood-light-red;
+    }
+    transition: all 0.2s;
+  }
+
+  .logout {
+    height: 80px;
+    width: 84px;
+    margin: 0;
+    display: inline-block;
+    float: right;
+    background: $blood-red image-url('/images/logout_icon.png') no-repeat center center;
+    background-size: 64px 64px;
+
+    &:hover {
+      background-color: $blood-dark-red;
+
     }
     transition: all 0.2s;
   }

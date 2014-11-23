@@ -10,9 +10,7 @@ angular.module('rscwbApp')
       var values = [];
       var max = 0;
 
-      //joinTables.join($scope.currentUser.id).then(function(instititution) {
-
-      joinTables.join('4AiydVM8JP').then(function(institution) {
+      joinTables.join($scope.currentUser.id).then(function(institution) {
         values = [];
         max = 0;
 
@@ -58,8 +56,7 @@ angular.module('rscwbApp')
         }
       };
       $scope.updateBloodValues = function() {
-        //joinTables.join($scope.currentUser.id).then(function(instititution) {
-        joinTables.join("4AiydVM8JP").then(function(institution) {
+        joinTables.join($scope.currentUser.id).then(function(institution) {
           for(var i = 0; i < institution.blood.length; i++) {
             institution.blood[i].save({
               value: $scope.blood[i].value + ''
@@ -76,8 +73,7 @@ angular.module('rscwbApp')
       };
 
       $scope.updateInstitution = function() {
-        //joinTables.join($scope.currentUser.id).then(function(instititution) {
-        joinTables.join('4AiydVM8JP').then(function(institution) {
+        joinTables.join($scope.currentUser.id).then(function(institution) {
           institution.institution.save({
             name: $scope.institution.name,
             city: $scope.institution.location,
