@@ -34,5 +34,7 @@
   "location": "Address",
   "bloodNeeded": "Blood types:",
   "description": "Description",
-  "emailReset": "An email was sent with further instructions."
+  "emailReset": "An email was sent with further instructions.",
+  "browseDonors": "Browse donors",
+  "description": "Description"
 }
