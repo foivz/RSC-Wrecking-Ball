@@ -47,4 +47,9 @@
       </div>
     </div>
   </div>
+
+  <div class="localization-container">
+    <select class="form-control" ng-model="language" ng-change="languageChanged()" ng-options="lan.name for lan in languages"></select>
+  </div>
+
 </div>
