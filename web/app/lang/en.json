@@ -38,5 +38,8 @@
   "bloodNeeded": "Blood types:",
   "description": "Description",
   "emailReset": "An email was sent with further instructions.",
-  "browseDonors": "Browse donors"
+  "browseDonors": "Browse donors",
+
+  "years": "Years",
+  "donations": "donations"
 }
