@@ -17,7 +17,7 @@ angular.module('rscwbApp')
         $scope.institution = {
           name: institution.institution.get('name'),
           location: institution.institution.get('city'),
-          //description: institution.institution.get('name');
+          description: institution.institution.get('description')
         };
 
         for(var i = 0; i < institution.blood.length; i++) {
@@ -61,7 +61,7 @@ angular.module('rscwbApp')
             institution.blood[i].save({
               value: $scope.blood[i].value + ''
             }, {
-              succes: function(result) {
+              success: function(result) {
                 console.log('updated blood values', result);
               },
               error: function(result, error) {
@@ -77,10 +77,10 @@ angular.module('rscwbApp')
           institution.institution.save({
             name: $scope.institution.name,
             city: $scope.institution.location,
-            //description: $scope.institution.description
+            description: $scope.institution.description
           }, {
-            succes: function(result) {
-              console.log('updated blood values', result);
+            success: function(result) {
+              console.log('updated institute values', result);
             },
             error: function(result, error) {
               console.log(error);
