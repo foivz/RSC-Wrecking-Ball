@@ -2,7 +2,7 @@
   "appName": "Lifeline",
   "home": "Home",
   "manageInfo": "Manage institution",
-
+  "cancel": "Cancel",
   "blood": "blood",
   "login": "Login",
   "logout": "Log out",
@@ -10,9 +10,14 @@
   "submit": "Submit",
   "username": "Username",
   "password": "Password",
+  "forgotPassword": "Forgot your password?",
   "national": "National",
   "bloodType": "Blood type",
   "city": "City",
+  "eventName": "eventName",
+  "pushNotification": "Push notification",
+  "eventTime": "Event time",
+  "eventLocation": "Event location",
   "institutionName": "Institution name",
   "removeInstitution": "Remove institution",
   "email": "E-mail",
@@ -24,7 +29,9 @@
   "manageInstitutionInfo": "Edit institution information",
   "updateInstitutionInfo": "Update institution information",
   "updateBloodValues": "Update blood values",
+  "pushNotification": "Send push notification",
   "name": "Name",
   "location": "Address",
+  "bloodNeeded": "Blood types:",
   "description": "Description"
 }
