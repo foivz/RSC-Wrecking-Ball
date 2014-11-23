@@ -1,0 +1,1 @@
+<div class="container"> <table class="table"> <thead> <td>{{lang.name}} <td>{{lang.surname}} <td>{{lang.numberOfDonations}} <td>  <tbody> <tr ng-repeat="donor in donors"> <td>{{donor.userData.get('name')}} <td>{{donor.userData.get('surname')}} <td>{{donor.numberOfDonations}} <td ng-click="onAddDonationClick()">{{lang.addDonation}}   </table> </div>
