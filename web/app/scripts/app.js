@@ -43,16 +43,20 @@ angular
     $rootScope.logOut = function() {
       console.log('odjava');
       $cookieStore.remove('currentUser');
-      // $rootScope.changeView('login');
+      $rootScope.changeView('login');
     };
   }])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
+      // .when('/', {
+      //   templateUrl: 'views/main.html',
+      //   controller: 'MainCtrl'
+      // })
       .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+      })
+      .when('/', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
