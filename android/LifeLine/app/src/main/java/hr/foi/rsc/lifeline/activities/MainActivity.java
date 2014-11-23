@@ -30,6 +30,8 @@ import hr.foi.rsc.lifeline.fragments.ProfileOverviewFragment;
 public class MainActivity extends ActionBarActivity
     implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
+    public static final String COM_PARSE_DATA = "com.parse.Data";
+
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -50,9 +52,9 @@ public class MainActivity extends ActionBarActivity
         ButterKnife.inject(this);
 
         // push notification received
-        if (getIntent() != null) {
+        if (getIntent() != null && getIntent().hasExtra(COM_PARSE_DATA)) {
             try {
-                JSONObject pushData = new JSONObject(getIntent().getStringExtra("com.parse.Data"));
+                JSONObject pushData = new JSONObject(getIntent().getStringExtra(COM_PARSE_DATA));
                 String alertText = pushData.optString("alert");
                 String eventId = pushData.optString("eventId");
                 String location = pushData.optString("location");
