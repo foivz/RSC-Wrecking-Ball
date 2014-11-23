@@ -6,6 +6,11 @@ angular.module('rscwbApp')
     function ($scope) {
       $scope.checkUser();
 
+      $scope.error = {
+        hasError: false,
+        msg: $scope.lang.notificationSent
+      };
+
       $scope.notificationInfo = {};
 
       var select2 = $('#bloodtypes').select2();
@@ -25,12 +30,18 @@ angular.module('rscwbApp')
           success: function(event) {
             console.log('new event created');
 
-            // var queryUserData = new Parse.Query(Parse.User);
+            $scope.notificationInfo.name = '';
+            $scope.notificationInfo.time = '';
+            $scope.notificationInfo.location = '';
 
-            // queryUserData.equalTo();
+            $scope.error.hasError = true;
+            $scope.$apply();
+            setTimeout(function() {
+              $scope.error.hasError = false;
+              $scope.$apply();
+            }, 2000);
 
             Parse.Push.send({
-              // where: queryUserData,
               channels: ['all'],
               data: {
                   alert: 'Great news!',
