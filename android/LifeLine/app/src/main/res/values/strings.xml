@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Life Line</string>
+    <string name="app_name">Lifeline</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="register">Register</string>
     <string name="sign_in">Sign in</string>

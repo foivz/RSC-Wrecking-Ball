@@ -37,6 +37,7 @@ public class ProfileOverviewPresenterImpl implements ProfileOverviewPresenter {
     private FindCallback<ParseObject> findCallback = new FindCallback<ParseObject>() {
         @Override
         public void done(List<ParseObject> parseObjects, ParseException e) {
+
             if (parseObjects == null) {
                 parseObjects = new ArrayList<>();
             }
@@ -44,13 +45,24 @@ public class ProfileOverviewPresenterImpl implements ProfileOverviewPresenter {
             int donations = parseObjects.size();
             float liters = donations * User.BLOOD_PER_DONATION_LITERS;
             float litersNeededForTicket = liters % User.BLOOD_FOR_TICKET_LITERS;
-            int achievements = 2;
 
-            int daysToNext = 2; // TODO
+            int daysToNext = 73; // TODO
+
+            int achievementNum = 0;
+
+            if (parseObjects.size() >= 15) {
+                achievementNum = 4;
+            } else if (parseObjects.size() >= 10) {
+                achievementNum = 3;
+            } else if (parseObjects.size() >= 5) {
+                achievementNum = 2;
+            } else if (parseObjects.size() >= 1) {
+                achievementNum = 1;
+            }
 
             profileOverviewView.hideProgress();
             profileOverviewView.showData(decimalFormat.format(liters), String.valueOf(daysToNext),
-                String.valueOf(achievements), decimalFormat.format(litersNeededForTicket));
+                String.valueOf(achievementNum), decimalFormat.format(litersNeededForTicket));
         }
     };
 
