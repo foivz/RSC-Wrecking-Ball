@@ -29,7 +29,8 @@
         <li><a ng-href="#/login">Login</a></li>
       </ul> -->
       <div class="container">
-        <a ng-href="#/institution/home" class="app-name"></a>
+        <a ng-show="currentUser && currentUser.get('type') !== 'superadmin'" ng-href="#/institution/home" class="app-name"></a>
+        <a ng-show="currentUser && currentUser.get('type') === 'superadmin'" ng-href="#/superadmin/home" class="app-name"></a>
         <ul class="nav nav-pills">
           <li><a ng-show="currentUser && currentUser.get('type') !== 'superadmin'" ng-href="#/institution/home">{{lang.home}}</a></li>
           <li><a ng-show="currentUser && currentUser.get('type') !== 'superadmin'"  ng-href="#/institution/info">{{lang.manageInfo}}</a></li>
