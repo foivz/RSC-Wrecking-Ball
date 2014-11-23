@@ -147,7 +147,7 @@ span {
     display: inline-block;
     float: right;
     background: $blood-red image-url('/images/logout_icon.png') no-repeat center center;
-    background-size: 64px 64px;
+    background-size: 32px 32px;
 
     &:hover {
       background-color: $blood-dark-red;

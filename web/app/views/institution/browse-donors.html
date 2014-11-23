@@ -10,7 +10,8 @@
           <div class="donations"><span>{{donor.userData.get('bloodType')}}</span>{{donor.numberOfDonations + ' ' + lang.donations}}<span></span></div>
           <div class="achievement d{{donor.achievement}}-times"></div>
           <div>
-            <a class="link" ng-click="onAddDonationClick()">{{lang.addDonation}}</a>
+            <input class="form-control input-clear" ng-model="donationDate" type="text" placeholder="{{lang.date}}">
+            <a class="link" ng-click="onAddDonationClick(donor.userData.get('userObjectId'))">{{lang.addDonation}}</a>
           </div>
         </div>
       </div>

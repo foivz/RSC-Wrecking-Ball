@@ -41,5 +41,6 @@
   "browseDonors": "Browse donors",
   "youAreDonor": "Only an administrator can access the website.",
   "years": "Years",
-  "donations": "donations"
+  "donations": "donations",
+  "date": "Date"
 }

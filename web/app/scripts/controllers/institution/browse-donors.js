@@ -58,7 +58,58 @@ angular.module('rscwbApp')
 
       getDonors();
 
-      $scope.onAddDonationClick = function() {
-        // this.donor
+      $scope.onAddDonationClick = function(userId) {
+        var currentUserID = $scope.currentUser.id;
+
+        var UserDonation = Parse.Object.extend('UserDonation');
+        var donation = new UserDonation;
+
+        var UserData = Parse.Object.extend('UserData');
+        var queryUserData = new Parse.Query(UserData);
+        var bloodType = '';
+
+        var InstitutionBlood = Parse.Object.extend('InstitutionBlood');
+        var queryBlood = new Parse.Query(InstitutionBlood);
+
+        queryUserData.equalTo('userObjectId', userId);
+
+        queryUserData.find({
+          success: function(resultType) {
+            bloodType = resultType[0].get('bloodType');
+
+            queryBlood.equalTo('userObjectId', currentUserID);
+            queryBlood.equalTo('bloodType', bloodType);
+
+            queryBlood.find({
+              success: function(resultBlood) {
+                resultBlood[0].save({'value': (parseInt(resultBlood[0].get('value'))+1)+'' }, {
+                  success: function(result) {
+                    console.log('blood added');
+                    donation.save({userObjectId: userId, institutionObjectId: currentUserID, dateOfDonation: $scope.donationDate
+                    },{
+                      success: function(result) {
+                        console.log('donation added');
+                        getDonors();
+                        $scope.$apply;
+                      },
+                      error: function(result, error) {
+                        console.log(error);
+                      }
+                    });
+                  },
+                  error: function(result, error){
+                    console.log(error);
+                  }
+                });
+              },
+              error: function(result, error){
+                console.log(error);
+              }
+            });
+          },
+          error: function(result, error) {
+            console.log(error);
+          }
+        });
       };
     }]);
