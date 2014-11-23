@@ -7,10 +7,12 @@ angular.module('rscwbApp')
       var User = Parse.Object.extend('User');
       var Institution = Parse.Object.extend('InstitutionData');
       var Blood = Parse.Object.extend('InstitutionBlood');
+      var UserData = Parse.Object.extend('UserData');
 
       var queryUser = new Parse.Query(User);
       var queryInstitution = new Parse.Query(Institution);
       var queryBlood = new Parse.Query(Blood);
+      var queryUserData = new Parse.Query(UserData);
 
       var fullInstitution = {};
 
@@ -29,7 +31,17 @@ angular.module('rscwbApp')
               queryBlood.find({
                 success: function(blood) {
                   fullInstitution.blood = blood;
-                  returnResult.resolve(fullInstitution);
+                  queryUserData.equalTo('userObjectId', objectId);
+                  queryUserData.find({
+                    success: function(userdata) {
+                      fullInstitution.userData = userdata;
+                      returnResult.resolve(fullInstitution);
+                    },
+                    error: function(error) {
+                      console.log(error);
+                      returnResult.reject(error);
+                    }
+                  });
                 },
                 error: function(result, error) {
                   console.log(error);
