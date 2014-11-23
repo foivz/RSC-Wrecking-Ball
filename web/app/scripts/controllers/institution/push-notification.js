@@ -33,7 +33,7 @@ angular.module('rscwbApp')
               // where: queryUserData,
               channels: ['all'],
               data: {
-                  alert: 'Dino Great news!',
+                  alert: 'Great news!',
                   eventId: event.id,
                   time: $scope.notificationInfo.time,
                   location: $scope.notificationInfo.location
